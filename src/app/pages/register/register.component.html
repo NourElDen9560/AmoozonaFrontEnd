@@ -1,0 +1,70 @@
+
+
+<div class="card text-center" >
+    <div class="card-body">
+      
+<form  [formGroup]="Register" (submit)="RegisterAction()">
+
+    <div class="form-group">
+        <label for="Name">Name</label>
+        <input type="text" class="form-control" formControlName="name"  id="Name" placeholder="Name" name="name" required >
+        <div class="alert alert-danger" *ngIf="this.Register.controls['name'].invalid">
+         <span >
+  Invalid Paassword
+         </span> 
+        </div>
+        
+      </div>
+
+
+    <div class="form-group"  >
+      <label for="Email">Email address</label>      
+      <input type="email" class="form-control" formControlName="email" id="Email" placeholder="Enter email" name="Email" required  >
+      <div class="alert alert-danger" *ngIf="this.Register.controls['email'].invalid" >
+        <!-- {{this.login.controls['email'].invalid}} -->
+      <span >
+        Invalid Email
+               </span> 
+      </div>
+    </div>
+
+
+
+    <div class="form-group">
+      <label for="passwordEmail">Password</label>
+      <input type="password" class="form-control" formControlName="password"  id="passwordEmail" placeholder="Password" name="Password" required >
+      <div class="alert alert-danger" *ngIf="this.Register.controls['password'].invalid">
+       <span >
+Invalid Paassword
+       </span> 
+      </div>
+      
+    </div>
+    
+
+    <div class="form-group">
+        <label for="Age">Age</label>
+        <input type="number" class="form-control" formControlName="age"  id="Age" placeholder="Age" name="age" required >
+        <div class="alert alert-danger" *ngIf="this.Register.controls['age'].invalid">
+         <span >
+  Invalid Paassword
+         </span> 
+        </div>
+        
+      </div>
+
+      <div class="form-group">
+        <input type="file" class="form-control" formControlName="image"  >
+      </div>
+
+
+    
+      <div class="form-group submit">
+        <button type="submit" class="btn btn-primary" [disabled]="this.Register.invalid"  >Submit</button>
+      </div>
+
+
+   
+  </form>
+    </div>
+  </div>
