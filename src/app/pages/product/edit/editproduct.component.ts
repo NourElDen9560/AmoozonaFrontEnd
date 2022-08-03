@@ -34,16 +34,11 @@ export class EditproductComponent implements OnInit {
   
     edit_product(editForm:FormGroup){
     this.data.edit_product(this.id,this.editForm.value).subscribe(
-      res=> { 
-                console.log(res);
-               alert('product updated successfully');
-       },
+      res=> { alert(res.message);}, 
       err=>console.log(err),
-       ()=>{
-        this.router.navigate(['/product']);
-        }
+      ()=>{ this.router.navigate([`single/${this.id}`]);  }
     )}
-
+ 
     ngOnInit(): void {   this.editForm.patchValue(this.arr);  }
 
   // ngOnInit(): void { this.listall()  }

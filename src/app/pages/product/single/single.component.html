@@ -24,7 +24,7 @@
     <div class="action">
         <!-- if auth it will be apper  -->
         <a routerLink="/edit_product/{{obj._id}}" type="button" class="btn btn-warning">Edit Product</a>
-        <a routerLink="/delete_product/{{obj._id}}" type="button" class="btn btn-danger">Delete Product</a>
+        <a  routerLink="/delete_product/{{obj._id}}" type="button" class="btn btn-danger" (click)="delete_product(obj._id)">Delete Product</a>
     </div>
     <!-- product deatails in single show not in all  +++ sold + brand + quanitity  + comments -->
 </div>

@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'addproduct', component:AddproductComponent }, /// auth on path ???/ here in angular ????
   { path: 'edit_product/:id', component:EditproductComponent},
   
+   
 
 ];
 
