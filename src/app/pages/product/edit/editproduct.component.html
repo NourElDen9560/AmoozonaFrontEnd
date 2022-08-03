@@ -1,0 +1,61 @@
+<form class="example-form" [formGroup]="editForm" (ngSubmit)="edit_product()" style="margin-bottom:24%;">
+  
+  <!-- <div style="margin-left:10%;">{{registerForm.valid}}</div> -->
+
+   
+  <div class="form-group">
+    <label for="title">title</label>
+    <input type="text" class="form-control" formControlName="title"  id="title" placeholder="title" name="title" required >
+    <div class="alert alert-danger" *ngIf="this.editForm.controls['title'].invalid">
+     <span >
+Invalid title
+     </span> 
+    </div>
+    
+  </div>
+
+
+<div class="form-group"  >
+  <label for="price">price</label>      
+  <input type="number" class="form-control" formControlName="price" id="price" placeholder="Enter price" name="price" required  >
+  <div class="alert alert-danger" *ngIf="this.editForm.controls['price'].invalid" >
+  <span >
+    Invalid price
+           </span> 
+  </div>
+</div>
+
+
+
+
+
+
+<div class="form-group">
+    <label for="Age">quantity</label>
+    <input type="number" class="form-control" formControlName="quantity"  id="quantity" placeholder="quantity" name="quantity" required >
+    <div class="alert alert-danger" *ngIf="this.editForm.controls['quantity'].invalid">
+     <span >
+Invalid quantity
+     </span> 
+    </div>
+    
+  </div>
+
+
+  <div class="form-group">
+    <label for="details">details</label>
+    <input type="text" class="form-control" formControlName="details"  id="details" placeholder="details" name="details" required >
+    <div class="alert alert-danger" *ngIf="this.editForm.controls['details'].invalid">
+     <span >
+Invalid details
+     </span> 
+    </div>
+    
+  </div>
+
+
+
+    <button type="submit" mat-fab class="btn98" (click)="edit_product()" [disabled]="editForm.invalid">Edit</button>
+  <!-- get msg sucess or not  -->
+  </form>
+  

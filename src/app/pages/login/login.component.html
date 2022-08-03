@@ -6,7 +6,7 @@
 <form  [formGroup]="login" (submit)="Login()">
     <div class="form-group"  >
       <label for="Email">Email address</label>      
-      <input type="email" class="form-control" formControlName="email" id="Email" placeholder="Enter email" name="Email" required  >
+      <input type="email" class="form-control" formControlName="email" id="Email" placeholder="Enter email" name="email" required  >
       <div class="alert alert-danger" *ngIf="this.login.controls['email'].invalid" >
         <!-- {{this.login.controls['email'].invalid}} -->
       <span >
@@ -16,7 +16,7 @@
     </div>
     <div class="form-group">
       <label for="passwordEmail">Password</label>
-      <input type="password" class="form-control" formControlName="password"  id="passwordEmail" placeholder="Password" name="Password" required >
+      <input type="password" class="form-control" formControlName="password"  id="passwordEmail" placeholder="Password" name="password" required >
       <div class="alert alert-danger" *ngIf="this.login.controls['password'].invalid">
        <span >
 Invalid Paassword

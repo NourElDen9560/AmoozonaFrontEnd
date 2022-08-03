@@ -1,0 +1,26 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+    .mat-form-field {
+        margin: 5% 0% 0% 5%;
+
+    }
+
+    .btn98{
+        margin-left: 83%;
+        margin-top: -14%;
+        display: inline-block;
+    }
+
+    .file-upload{
+        margin-left: 13%;
+        margin-top: 9%;
+        display: inline-block;
+    }

@@ -23,7 +23,7 @@ Register= new FormGroup({
   }
 RegisterAction(){
   this.userdata.RegisterApi(this.Register.value).subscribe(
-    (res)=>console.log(res),
+    (res)=>alert("successfully registered"),
     (err)=>console.log(err),
     ()=>{
 this._router.navigate(['/'])

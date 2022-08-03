@@ -1,0 +1,77 @@
+<div class="container" style="margin-bottom:11.5%;">
+    <!-- {{obj.}} -->
+    <span class="p">Product Name: &nbsp;</span><span>{{obj.title}}</span> <br>
+    <span class="p">Brand: </span><span>{{obj.Brand}}</span><br>
+    <span class="p">Sold: &nbsp;</span><span>{{obj.sold}} times</span><br>
+    <span class="p">Quantity: </span><span>{{obj.quantity}}</span><br>
+    <span class="p">Price: &nbsp;</span><span>{{obj.price}} $</span><br>
+
+    <span  class="rate_num" title="Click To Add Rate" >Rates:{{obj.rate}}
+       <a routerLink="#"><img class="rate_icon" src="assets/product_img/rate.png "></a> 
+       <a routerLink="#"><img class="rate_icon" src="assets/product_img/rate.png "></a> 
+       <a routerLink="#"><img class="rate_icon" src="assets/product_img/rate.png "></a> 
+    </span>   <br>
+    
+    <span style="margin:3% 1.5% 3% 0%" class="p">Ratings & Reviews:</span>
+   <!-- /// for loooooooooooop here  -->
+
+    <button title="Click To Add Comment" (click)="addcomment(obj._id)">
+        <img src="assets/product_img/addcomment.png" width="35px" height="35px" alt="Comment" srcset="">
+    </button>
+        <!-- // pop up comment box -->
+
+
+   <div style="margin-left:2%;" *ngFor="let comment of obj.comments">
+    <span class="p">{{comment.userId}}: &nbsp;</span> <span>{{comment.comment}}</span> <br>
+   </div>
+
+    <img  class="image" src="assets/product_img/p1.jpg" alt="{{obj.title}}">
+
+    <div class="action">
+        <!-- if auth it will be apper  -->
+         <a routerLink="/edit_product/{{obj._id}}" type="button" class="btn btn-warning">Edit Product</a>
+        <a   type="button" class="btn btn-danger" (click)="delete_product(obj._id)">Delete Product</a>
+        <br>
+        <!-- <a routerLink="/addtocart/{{obj._id}}" type="button" class="btn btn-success">Add To My Cart</a>
+          
+        <form [formGroup]="CheckOtp" (click)="CheckValidationOTP()">
+<input type="string" class="form-control" formControlName="otp" required placeholder="Enter Otp that Send on Your Mail">
+         <a class="btn btn-primary">Submit</a>
+
+         </form>
+        -->
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    Add To My Cart
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="staticBackdropLabel">Are You Sure to Buy this product => {{obj.title}} </h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form [formGroup]="CheckOtp" (submit)="CheckValidationOTP()">
+                <input type="string" class="form-control" formControlName="otp" required placeholder="Enter Otp that Send on Your Mail">
+                         <button class="btn btn-primary" [disabled]="CheckOtp.invalid">Submit</button>
+                
+                         </form>
+                        
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" >Close</button>
+         
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+          
+    </div>
+    <!-- product deatails in single show not in all  +++ sold + brand + quanitity  + comments -->
+</div>

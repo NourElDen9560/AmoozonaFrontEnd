@@ -15,10 +15,17 @@ password:new FormControl('', Validators.required) ,
   constructor(private data: UserapiService , private router: Router) { }
 
   ngOnInit(): void {
+   
   }
   Login(){
+    // console.log("test")
     this.data.LoginApi(this.login.value).subscribe(
-      res=>alert("sucessfully logged in"),
+      res=>{
+        console.log(res.data.token)
+        localStorage.setItem('UserToken', `${res.data.token}`)
+        // alert("sucessfully logged in")
+    
+    },
       err=>console.log(err),
       ()=>{
         this.router.navigate(['/']);
