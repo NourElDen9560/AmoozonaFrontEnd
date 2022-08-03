@@ -10,7 +10,15 @@
     margin: 1% 0% 3% 0%;
     display: inline-block;
      }
-
+#btn_send{
+    margin: 1% 0% 3% 0%;
+      }
+ 
+#btn_add_comment{
+    margin:3% 0% 0% -74%;
+    max-width: 63px;
+    max-height: 46px;
+}
 
 span{
     font-size: 2em;
@@ -33,10 +41,10 @@ span:hover{
     transition: transform 0.5s;
 }
  
-.btn{
+#fun1,#fun2{
     position: relative;
     width: 135px;
-    top: -29px;
+    top: -115px;
     left: 966px;
     margin: 0% 1% 1% 1%;
     font-weight: bold;

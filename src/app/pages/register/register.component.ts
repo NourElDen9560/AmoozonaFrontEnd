@@ -26,7 +26,7 @@ RegisterAction(){
     (res)=>console.log(res),
     (err)=>console.log(err),
     ()=>{
-this._router.navigate(['/'])
+            this._router.navigate(['/'])
     }
   )
 }

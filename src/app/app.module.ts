@@ -19,6 +19,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSliderModule } from '@angular/material/slider';
 import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
+import { ActiveComponent } from './user/active/active.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import {MatButtonModule} from '@angular/material/button';
     AddproductComponent,
     EditproductComponent,
     ListallComponent,
-    SingleComponent
+    SingleComponent,
+    ActiveComponent
   ],
   imports: [
     BrowserModule,

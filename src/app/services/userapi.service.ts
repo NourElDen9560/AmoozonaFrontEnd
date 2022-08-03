@@ -17,6 +17,9 @@ return this.http.post(`${this.api}register`, Data)
   LoginApi(Data:any):Observable<any>{
   return  this.http.post(`${this.api}login`, Data)
       }
+
+  delete_product(id:any): Observable<any> {return this.http.delete(`${this.api}delete_product/${id}`)}
+
   // changepassword(Data:any):Observable<any>{
 
   // }
