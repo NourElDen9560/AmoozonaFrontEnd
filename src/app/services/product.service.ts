@@ -17,8 +17,10 @@ export class ProductService {
   list_single_product(id: any): Observable<any> {return this.http.get(`${this.api}list_single_product/${id}`)}
   edit_product(id:any,Data: any): Observable<any> {return this.http.patch(`${this.api}edit_product/${id}`,Data)}
   delete_product(id:any): Observable<any> {return this.http.delete(`${this.api}delete_product/${id}`)}
+/////////////////////
+  add_comment(id:any): Observable<any> {return this.http.delete(`${this.api}add_comment/${id}`)}
 
-
+  /////////////////////
   get_product_by_name(name: string): Observable<any> {return this.http.get(`${this.api}get_product_by_name/${name}`)}
   get_product_by_category(category: string): Observable<any> {return this.http.get(`${this.api}get_product_by_category/${category}`)}
   get_product_by_brand(brand: string): Observable<any> {return this.http.get(`${this.api}get_product_by_brand/${brand}`)}

@@ -22,7 +22,16 @@ export class SingleComponent implements OnInit {
        ()=>{ this.router.navigate(['/']);}
     )}
 
-  listall(){
+    addcomment(id:any)
+    {
+      this.data.add_comment(this.id).subscribe(
+        res=> {   alert(res.message); },
+          err=>console.log(err),
+          ()=>{ this.router.navigate(['/']);}
+      )
+    }
+
+    list_single_product(){
     this.data.list_single_product(this.id).subscribe(
       res=> {
         this.obj = res.data; 
@@ -32,6 +41,5 @@ export class SingleComponent implements OnInit {
        ()=>{}
     )}
 
-
-  ngOnInit(): void { this.listall()  }
-}
+   ngOnInit(): void {this.list_single_product()  }
+ }

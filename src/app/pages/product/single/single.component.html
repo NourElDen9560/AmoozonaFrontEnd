@@ -3,19 +3,25 @@
     <span class="p">Product Name: &nbsp;</span><span>{{obj.title}}</span> <br>
     <span class="p">Brand: </span><span>{{obj.brand}}</span><br>
     <span class="p">Sold: &nbsp;</span><span>{{obj.sold}} times</span><br>
-    <span class="p">Quantity: </span><span>{{obj.quanitity}}</span><br>
+    <span class="p">Quantity: </span><span>{{obj.quantity}}</span><br>
     <span class="p">Price: &nbsp;</span><span>{{obj.price}} $</span><br>
 
-    <span class="rate_num">Rates:{{obj.rate}}
-        <img class="rate_icon" src="assets/product_img/rate.png ">
-        <img class="rate_icon" src="assets/product_img/rate.png ">
-        <img class="rate_icon" src="assets/product_img/rate.png ">
-        <img class="rate_icon" src="assets/product_img/rate.png ">
-        <img class="rate_icon" src="assets/product_img/rate.png "></span>  <br>  <br>  <br> 
-       
-    <span class="p">Ratings & Reviews:</span><br>
+    <span class="rate_num" title="Click To Add Rate" >Rates:{{obj.rate}}
+       <a routerLink="#"><img class="rate_icon" src="assets/product_img/rate.png "></a> 
+       <a routerLink="#"><img class="rate_icon" src="assets/product_img/rate.png "></a> 
+       <a routerLink="#"><img class="rate_icon" src="assets/product_img/rate.png "></a> 
+    </span>   <br>
+    
+    <span style="margin:3% 1.5% 3% 0%" class="p">Ratings & Reviews:</span>
    <!-- /// for loooooooooooop here  -->
-   <div *ngFor="let comment of obj.comments">
+
+    <button title="Click To Add Comment" (click)="addcomment(obj._id)">
+        <img src="assets/product_img/addcomment.png" width="35px" height="35px" alt="Comment" srcset="">
+    </button>
+        <!-- // pop up comment box -->
+
+
+   <div style="margin-left:2%;" *ngFor="let comment of obj.comments">
     <span class="p">{{comment.userId}}: &nbsp;</span> <span>{{comment.comment}}</span> <br>
    </div>
 
