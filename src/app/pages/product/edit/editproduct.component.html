@@ -1,13 +1,12 @@
-<form class="example-form" [formGroup]="editForm" (ngSubmit)="register()" style="margin-bottom:24%;">
+<form class="example-form" [formGroup]="editForm" (ngSubmit)="edit_product(editForm)" style="margin-bottom:24%;">
  
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Product Name</mat-label>
-      <input matInput  name="name" [value]="arr.name" >
+      <input matInput  name="title" [value]="arr.title" >
       <!-- // formControlName="name" -->
     </mat-form-field>
   
-    <div *ngIf="name?.touched && name?.invalid" class="alert alert-warning">{{ name?.errors|json}}</div>
-  
+    <div *ngIf="title?.touched && title?.invalid" class="alert alert-warning">{{ title?.errors|json}}</div>
   
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Product Price</mat-label>

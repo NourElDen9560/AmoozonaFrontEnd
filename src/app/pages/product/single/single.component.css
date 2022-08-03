@@ -10,13 +10,17 @@
     margin: 1% 0% 3% 0%;
     display: inline-block;
      }
+
+
 span{
     font-size: 2em;
     font-weight: bold;
     /* padding:5%; */ 
     margin: 10% 0% 2% 0%;; 
 }
-
+span:hover{
+    color: blue;
+}
 .image{
     position: absolute;
     margin: -32% 0% 1% 59%
@@ -28,10 +32,11 @@ span{
  
 .btn{
     position: relative;
-    width: 101px;
+    width: 135px;
     top: -29px;
     left: 966px;
     margin: 0% 1% 1% 1%;
+    font-weight: bold;
 }
  
  

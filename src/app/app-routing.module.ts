@@ -13,9 +13,9 @@ const routes: Routes = [
   {path:'login' , component:LoginComponent},
 /////////////// Prodcut Area /////////////////////////////////////////////////
   { path: '', component:ListallComponent },
-  { path: 'single', component:SingleComponent },
-  { path: 'addproduct', component:AddproductComponent },
-  { path: 'editproduct', component:EditproductComponent},
+  { path: 'single/:id', component:SingleComponent }, 
+  { path: 'addproduct', component:AddproductComponent }, /// auth on path ???/ here in angular ????
+  { path: 'edit_product/:id', component:EditproductComponent},
   
 
 ];

@@ -1,12 +1,12 @@
 <div class="container" style="margin-bottom:11.5%;">
+    <!-- {{obj.}} -->
+    <span class="p">Product Name: &nbsp;</span><span>{{obj.title}}</span> <br>
+    <span class="p">Brand: </span><span>{{obj.brand}}</span><br>
+    <span class="p">Sold: &nbsp;</span><span>{{obj.sold}} times</span><br>
+    <span class="p">Quantity: </span><span>{{obj.quanitity}}</span><br>
+    <span class="p">Price: &nbsp;</span><span>{{obj.price}} $</span><br>
 
-    <span class="p">Product Name:</span><span>phone g1 x 53548 model 5487</span> <br>
-    <span class="p">Brand:</span><span>Samsung</span><br>
-    <span class="p">Sold</span><span>500</span><br>
-    <span class="p">Quantity:</span><span>35</span><br>
-    <span class="p">Price:</span><span>1912.15 $</span><br>
-
-    <span class="rate_num">Rates:20
+    <span class="rate_num">Rates:{{obj.rate}}
         <img class="rate_icon" src="assets/product_img/rate.png ">
         <img class="rate_icon" src="assets/product_img/rate.png ">
         <img class="rate_icon" src="assets/product_img/rate.png ">
@@ -14,16 +14,17 @@
         <img class="rate_icon" src="assets/product_img/rate.png "></span>  <br>  <br>  <br> 
        
     <span class="p">Ratings & Reviews:</span><br>
+   <!-- /// for loooooooooooop here  -->
+   <div *ngFor="let comment of obj.comments">
+    <span class="p">{{comment.userId}}: &nbsp;</span> <span>{{comment.comment}}</span> <br>
+   </div>
 
-    <h1></h1>
-    <h1>User Name , Comment 1 </h1>
-    <h1> User Name ,  Comment 2</h1>
+    <img class="image" src="assets/product_img/p1.jpg" alt="{{obj.title}}">
 
-    <img class="image" src="assets/product_img/p1.jpg" alt="product_title_here">
     <div class="action">
         <!-- if auth it will be apper  -->
-        <a routerLink="/editproduct" type="button" class="btn btn-warning">Edit </a>
-        <a routerLink="#" type="button" class="btn btn-danger">Delete</a>
+        <a routerLink="/edit_product/{{obj._id}}" type="button" class="btn btn-warning">Edit Product</a>
+        <a routerLink="/delete_product/{{obj._id}}" type="button" class="btn btn-danger">Delete Product</a>
     </div>
     <!-- product deatails in single show not in all  +++ sold + brand + quanitity  + comments -->
 </div>

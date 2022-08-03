@@ -12,11 +12,15 @@ export class ProductService {
 
   constructor(private http: HttpClient) { }
 
-
   add_prodcut(Data: any): Observable<any> {return this.http.post(`${this.api}add_prodcut`, Data)}
   list_all_products(): Observable<any> {return this.http.get(`${this.api}list_all_products`)}
+  list_single_product(id: any): Observable<any> {return this.http.get(`${this.api}list_single_product/${id}`)}
+  edit_product(id: any,Data: any): Observable<any> {return this.http.patch(`${this.api}edit_product/${id}`,Data)}
 
-  get_product_by_id(id: number): Observable<any> {return this.http.get(`${this.api}get_product_by_id/${id}`)}
+  
+
+
+  
   update_product(Data: any): Observable<any> {return this.http.post(`${this.api}update_product`, Data)}
   delete_product(id: number): Observable<any> {return this.http.get(`${this.api}delete_product/${id}`)}
   get_product_by_name(name: string): Observable<any> {return this.http.get(`${this.api}get_product_by_name/${name}`)}
