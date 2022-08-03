@@ -1,4 +1,4 @@
-<form class="example-form" [formGroup]="editForm" (ngSubmit)="register()">
+<form class="example-form" [formGroup]="editForm" (ngSubmit)="register()" style="margin-bottom:24%;">
  
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Product Name</mat-label>
@@ -6,8 +6,6 @@
       <!-- // formControlName="name" -->
     </mat-form-field>
   
-    {{arr.name}}
-
     <div *ngIf="name?.touched && name?.invalid" class="alert alert-warning">{{ name?.errors|json}}</div>
   
   
@@ -28,7 +26,7 @@
   
     <mat-form-field class="example-full-width" appearance="fill">
       <mat-label>Product Quantity</mat-label>
-      <input matInput formControlName="quantity" name="quantity" placeholder="Desktop HP G2">
+      <input matInput formControlName="quantity" type="number" name="quantity" placeholder="Desktop HP G2">
     </mat-form-field>
   
     <div *ngIf="quantity?.touched && quantity?.invalid"   class="alert alert-warning">{{ quantity?.errors|json}}</div>

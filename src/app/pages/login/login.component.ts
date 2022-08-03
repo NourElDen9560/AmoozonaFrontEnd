@@ -8,14 +8,18 @@ import { UserapiService } from 'src/app/services/userapi.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
+
 login = new FormGroup({email:new FormControl('', Validators.required) ,
 password:new FormControl('', Validators.required) ,
 })
+
   constructor(private data: UserapiService , private router: Router) { }
 
   ngOnInit(): void {
   }
+  
   Login(){
     this.data.LoginApi(this.login.value).subscribe(
       res=>alert("sucessfully logged in"),

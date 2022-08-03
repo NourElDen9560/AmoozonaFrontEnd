@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators , ReactiveFormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ProductService } from 'src/app/services/product.service';
+ 
+@Component({selector: 'app-addproduct',templateUrl: './addproduct.component.html',styleUrls: ['./addproduct.component.css']})
 
-@Component({
-  selector: 'app-addproduct',templateUrl: './addproduct.component.html',styleUrls: ['./addproduct.component.css']})
 export class AddproductComponent implements OnInit {
 
-  constructor() {}
-  ngOnInit(): void {}
+  constructor(private data:ProductService , private router: Router) { }
+
+
+   ngOnInit(): void {}
  
-  registerForm = new FormGroup({
-    name: new FormControl('',[Validators.required,Validators.minLength(3)]),
+   add_product_from = new FormGroup({
+    title: new FormControl('',[Validators.required,Validators.minLength(3)]),
     price: new FormControl('',[Validators.required]),
     brand: new FormControl('',[Validators.required,Validators.minLength(3)]),
     quantity: new FormControl('',[Validators.required,Validators.minLength(3)]),
@@ -17,23 +21,22 @@ export class AddproductComponent implements OnInit {
     image: new FormControl('',[Validators.required])
   });
 
-  get name() {return this.registerForm.get('name');}
-  get price() {return this.registerForm.get('price');}
-  get brand() {return this.registerForm.get('brand');}
-  get quantity() {return this.registerForm.get('quantity');}
-  get details() {return this.registerForm.get('details');}
-  get image() {return this.registerForm.get('image');}
+  get title() {return this.add_product_from.get('title');}
+  get price() {return this.add_product_from.get('price');}
+  get brand() {return this.add_product_from.get('brand');}
+  get quantity() {return this.add_product_from.get('quantity');}
+  get details() {return this.add_product_from.get('details');}
+  get image() {return this.add_product_from.get('image');}
 
-   
-  register() {
 
-    alert("Product Added Successfully");
-
-    // // alert(this.registerForm.value);
-    // console.log("name :"+this.registerForm.value.name, 
-    // "mail : "+this.registerForm.value.details,
-    // "pass :"+this.registerForm.value.pass);
-  }
-
+  AddProduct(add_product_from:FormGroup){
+    this.data.add_prodcut(this.add_product_from.value).subscribe(
+      res=>alert("Product Added sucessfully"),
+      err=>console.log(err),
+      ()=>{
+        this.router.navigate(['/']);
+      }
+    )
+    }
 
 }
