@@ -19,11 +19,22 @@ password:new FormControl('', Validators.required) ,
 
   ngOnInit(): void {
   }
-  
+  err:any="";
   Login(){
     this.data.LoginApi(this.login.value).subscribe(
-      res=>alert("sucessfully logged in"),
-      err=>console.log(err),
+      res=> {
+        alert("sucessfully logged in")
+        console.log(res)
+        alert(res.message)
+        localStorage.setItem('token', res.data.token)
+      }, 
+      err=>{
+        this.err=err.error.message;
+        console.log(err)
+        alert(this.err)
+
+        // alert(res.message)
+      },
       ()=>{
         this.router.navigate(['/']);
       }

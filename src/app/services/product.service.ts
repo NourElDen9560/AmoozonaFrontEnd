@@ -8,8 +8,8 @@ import { Observable } from 'rxjs';
 
 export class ProductService {
 
-  api = `http://localhost:3000/api/product/`;
-
+  private api = `http://localhost:3000/api/product/`;
+  public variable_to_transfer_between_model = 'Hello World';
   constructor(private http: HttpClient) { }
 
   add_prodcut(Data: any): Observable<any> {return this.http.post(`${this.api}add_prodcut`, Data)}
