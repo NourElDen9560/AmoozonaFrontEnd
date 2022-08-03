@@ -1,0 +1,44 @@
+.container{
+    margin: 5% 0% 0% 5%;
+    display: inline-block;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
+     text-decoration: none;
+    color: black;}
+.p{
+    margin: 1% 0% 3% 0%;
+    display: inline-block;
+     }
+span{
+    font-size: 2em;
+    font-weight: bold;
+    /* padding:5%; */ 
+    margin: 10% 0% 2% 0%;; 
+}
+
+.image{
+    position: absolute;
+    margin: -32% 0% 1% 59%
+}
+.image:hover{
+    transform: scale(2);
+    transition: transform 0.5s;
+}
+ 
+.btn{
+    position: relative;
+    width: 101px;
+    top: -29px;
+    left: 966px;
+    margin: 0% 1% 1% 1%;
+}
+ 
+ 
+.product_footer{
+     margin: 4% 0% 0% 0%;
+}
+.rate_num{
+    font-weight: bold;
+ }
+.rate_icon{width: 30px;height: 30px;}

@@ -1,0 +1,50 @@
+<form class="example-form" [formGroup]="registerForm" (ngSubmit)="register()">
+ 
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Product Name</mat-label>
+    <input matInput formControlName="name" name="name" placeholder="Desktop HP G2">
+  </mat-form-field>
+
+  <div *ngIf="name?.touched && name?.invalid" class="alert alert-warning">{{ name?.errors|json}}</div>
+
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Product Price</mat-label>
+    <input matInput formControlName="price" name="price" type="number" placeholder="1000$">
+  </mat-form-field>
+
+  <div *ngIf="price?.touched && price?.invalid " class="alert alert-warning">{{ price?.errors|json}}</div>
+
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Product Brand</mat-label>
+    <input matInput formControlName="brand" name="brand" placeholder="HP">
+  </mat-form-field>
+
+  <div *ngIf="brand?.touched && brand?.invalid" class="alert alert-warning">{{ brand?.errors|json}}</div>
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Product Quantity</mat-label>
+    <input matInput formControlName="quantity" name="quantity" placeholder="Desktop HP G2">
+  </mat-form-field>
+
+  <div *ngIf="quantity?.touched && quantity?.invalid"   class="alert alert-warning">{{ quantity?.errors|json}}</div>
+
+
+  <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Product Details</mat-label>
+    <textarea matInput formControlName="details" name="details" placeholder="Ex. It makes me feel..."></textarea>
+  </mat-form-field>
+
+  <div *ngIf="details?.touched && details?.invalid" class="alert alert-warning">{{ details?.errors|json}}</div>
+
+  <input  formControlName="image" name="image" type="file" class="file-upload" onchange="console.log(event.target.files)"> 
+  
+  <div *ngIf="image?.touched && image?.invalid" class="alert alert-warning">{{ image?.errors|json}}</div>
+
+ 
+<!-- <div style="margin-left:10%;">{{registerForm.valid}}</div> -->
+
+  <button type="submit" mat-fab class="btn98" [disabled]="registerForm.invalid">Add</button>
+<!-- get msg sucess or not  -->
+</form>
