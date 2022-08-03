@@ -1,146 +1,15 @@
  
 
-<a routerLink="/single" class="product_container">  <!--   href="single/{p_id} "   -->
-    <img class="image" src="assets/product_img/p1.jpg" alt="product_title_here">
-    <h1 class="title"> phone g1 x 53548 model 5487</h1>
+ 
+<a *ngFor="let p of products" routerLink="/single/{{p._id}}" class="product_container">  
+    <img class="image" src="assets/product_img/p1.jpg" alt="{{p.title}}">
+    <h1 class="title">{{p.title}}</h1>
     <div class="product_footer">
-        <span class="rate_num"><img class="rate_icon" src="assets/product_img/rate.png ">Rates:20</span>
-        <span class="price">1000$</span>
+        <span class="rate_num"><img class="rate_icon" src="assets/product_img/rate.png ">{{p.rates.length}}</span>
+        <span class="price">{{p.price}}</span>
     </div>
     <!-- product deatails in single show not in all  +++ sold + brand + quanitity  + comments -->
 </a>
-<a routerLink="/single" class="product_container">
-    <img class="image" src="assets/product_img/p1.jpg" alt="product_title_here">
-    <h1 class="title"> phone g1 x 53548 model 5487</h1>
-    <div class="product_footer">
-        <span class="rate_num"><img class="rate_icon" src="assets/product_img/rate.png ">Rates:20</span>
-        <span class="price">1000$</span>
-    </div>
-    <!-- product deatails in single show not in all  +++ sold + brand + quanitity  + comments -->
-</a>
-<a routerLink="/single" class="product_container">
-    <img class="image" src="assets/product_img/p1.jpg" alt="product_title_here">
-    <h1 class="title"> phone g1 x 53548 model 5487</h1>
-    <div class="product_footer">
-        <span class="rate_num"><img class="rate_icon" src="assets/product_img/rate.png ">Rates:20</span>
-        <span class="price">1000$</span>
-    </div>
-    <!-- product deatails in single show not in all  +++ sold + brand + quanitity  + comments -->
-</a>
-<a routerLink="/single" class="product_container">
-    <img class="image" src="assets/product_img/p1.jpg" alt="product_title_here">
-    <h1 class="title"> phone g1 x 53548 model 5487</h1>
-    <div class="product_footer">
-        <span class="rate_num"><img class="rate_icon" src="assets/product_img/rate.png ">Rates:20</span>
-        <span class="price">1000$</span>
-    </div>
-    <!-- product deatails in single show not in all  +++ sold + brand + quanitity  + comments -->
-</a>
-<a routerLink="/single" class="product_container">
-    <img class="image" src="assets/product_img/p1.jpg" alt="product_title_here">
-    <h1 class="title"> phone g1 x 53548 model 5487</h1>
-    <div class="product_footer">
-        <span class="rate_num"><img class="rate_icon" src="assets/product_img/rate.png ">Rates:20</span>
-        <span class="price">1000$</span>
-    </div>
-    <!-- product deatails in single show not in all  +++ sold + brand + quanitity  + comments -->
-</a>
-<a routerLink="/single" class="product_container">
-    <img class="image" src="assets/product_img/p1.jpg" alt="product_title_here">
-    <h1 class="title"> phone g1 x 53548 model 5487</h1>
-    <div class="product_footer">
-        <span class="rate_num"><img class="rate_icon" src="assets/product_img/rate.png ">Rates:20</span>
-        <span class="price">1000$</span>
-    </div>
-    <!-- product deatails in single show not in all  +++ sold + brand + quanitity  + comments -->
-</a>
-<a routerLink="/single" class="product_container">
-    <img class="image" src="assets/product_img/p1.jpg" alt="product_title_here">
-    <h1 class="title"> phone g1 x 53548 model 5487</h1>
-    <div class="product_footer">
-        <span class="rate_num"><img class="rate_icon" src="assets/product_img/rate.png ">Rates:20</span>
-        <span class="price">1000$</span>
-    </div>
-    <!-- product deatails in single show not in all  +++ sold + brand + quanitity  + comments -->
-</a>
-<a routerLink="/single" class="product_container">
-    <img class="image" src="assets/product_img/p1.jpg" alt="product_title_here">
-    <h1 class="title"> phone g1 x 53548 model 5487</h1>
-    <div class="product_footer">
-        <span class="rate_num"><img class="rate_icon" src="assets/product_img/rate.png ">Rates:20</span>
-        <span class="price">1000$</span>
-    </div>
-    <!-- product deatails in single show not in all  +++ sold + brand + quanitity  + comments -->
-</a>
-<a routerLink="/single" class="product_container">
-    <img class="image" src="assets/product_img/p1.jpg" alt="product_title_here">
-    <h1 class="title"> phone g1 x 53548 model 5487</h1>
-    <div class="product_footer">
-        <span class="rate_num"><img class="rate_icon" src="assets/product_img/rate.png ">Rates:20</span>
-        <span class="price">1000$</span>
-    </div>
-    <!-- product deatails in single show not in all  +++ sold + brand + quanitity  + comments -->
-</a>
-<a routerLink="/single" class="product_container">
-    <img class="image" src="assets/product_img/p1.jpg" alt="product_title_here">
-    <h1 class="title"> phone g1 x 53548 model 5487</h1>
-    <div class="product_footer">
-        <span class="rate_num"><img class="rate_icon" src="assets/product_img/rate.png ">Rates:20</span>
-        <span class="price">1000$</span>
-    </div>
-    <!-- product deatails in single show not in all  +++ sold + brand + quanitity  + comments -->
-</a>
-<a routerLink="/single" class="product_container">
-    <img class="image" src="assets/product_img/p1.jpg" alt="product_title_here">
-    <h1 class="title"> phone g1 x 53548 model 5487</h1>
-    <div class="product_footer">
-        <span class="rate_num"><img class="rate_icon" src="assets/product_img/rate.png ">Rates:20</span>
-        <span class="price">1000$</span>
-    </div>
-    <!-- product deatails in single show not in all  +++ sold + brand + quanitity  + comments -->
-</a>
-<a routerLink="/single" class="product_container">
-    <img class="image" src="assets/product_img/p1.jpg" alt="product_title_here">
-    <h1 class="title"> phone g1 x 53548 model 5487</h1>
-    <div class="product_footer">
-        <span class="rate_num"><img class="rate_icon" src="assets/product_img/rate.png ">Rates:20</span>
-        <span class="price">1000$</span>
-    </div>
-    <!-- product deatails in single show not in all  +++ sold + brand + quanitity  + comments -->
-</a>
-<a routerLink="/single" class="product_container">
-    <img class="image" src="assets/product_img/p1.jpg" alt="product_title_here">
-    <h1 class="title"> phone g1 x 53548 model 5487</h1>
-    <div class="product_footer">
-        <span class="rate_num"><img class="rate_icon" src="assets/product_img/rate.png ">Rates:20</span>
-        <span class="price">1000$</span>
-    </div>
-    <!-- product deatails in single show not in all  +++ sold + brand + quanitity  + comments -->
-</a>
-<a routerLink="/single" class="product_container">
-    <img class="image" src="assets/product_img/p1.jpg" alt="product_title_here">
-    <h1 class="title"> phone g1 x 53548 model 5487</h1>
-    <div class="product_footer">
-        <span class="rate_num"><img class="rate_icon" src="assets/product_img/rate.png ">Rates:20</span>
-        <span class="price">1000$</span>
-    </div>
-    <!-- product deatails in single show not in all  +++ sold + brand + quanitity  + comments -->
-</a>
-<a routerLink="/single" class="product_container">
-    <img class="image" src="assets/product_img/p1.jpg" alt="product_title_here">
-    <h1 class="title"> phone g1 x 53548 model 5487</h1>
-    <div class="product_footer">
-        <span class="rate_num"><img class="rate_icon" src="assets/product_img/rate.png ">Rates:20</span>
-        <span class="price">1000$</span>
-    </div>
-    <!-- product deatails in single show not in all  +++ sold + brand + quanitity  + comments -->
-</a>
-<a routerLink="/single" class="product_container">
-    <img class="image" src="assets/product_img/p1.jpg" alt="product_title_here">
-    <h1 class="title"> phone g1 x 53548 model 5487</h1>
-    <div class="product_footer">
-        <span class="rate_num"><img class="rate_icon" src="assets/product_img/rate.png ">Rates:20</span>
-        <span class="price">1000$</span>
-    </div>
-    <!-- product deatails in single show not in all  +++ sold + brand + quanitity  + comments -->
-</a>
+
+ 
+ 

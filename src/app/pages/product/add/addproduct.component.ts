@@ -9,7 +9,6 @@ export class AddproductComponent implements OnInit {
 
   constructor(private data:ProductService , private router: Router) { }
 
-
    ngOnInit(): void {}
  
    add_product_from = new FormGroup({
@@ -28,15 +27,10 @@ export class AddproductComponent implements OnInit {
   get details() {return this.add_product_from.get('details');}
   get image() {return this.add_product_from.get('image');}
 
-
   AddProduct(add_product_from:FormGroup){
     this.data.add_prodcut(this.add_product_from.value).subscribe(
       res=>alert("Product Added sucessfully"),
       err=>console.log(err),
-      ()=>{
-        this.router.navigate(['/']);
-      }
-    )
-    }
-
+      ()=>{this.router.navigate(['/']);}
+    )}
 }
