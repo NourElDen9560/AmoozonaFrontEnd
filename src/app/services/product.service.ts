@@ -18,7 +18,9 @@ export class ProductService {
   edit_product(id:any,Data: any): Observable<any> {return this.http.patch(`${this.api}edit_product/${id}`,Data)}
   delete_product(id:any): Observable<any> {return this.http.delete(`${this.api}delete_product/${id}`)}
   add_comment(id:any,Data:any): Observable<any> {console.log("comment "+ Data); return this.http.post(`${this.api}add_comment/${id}`,Data)}
+  delete_comment(id:any,comment:any): Observable<any> {console.log("comment "+ comment); return this.http.delete(`${this.api}delete_comment/${id}/${comment}`)}
 
+  
   //////////////////////////////////////////
   // get_product_by_name(name: string): Observable<any> {return this.http.get(`${this.api}get_product_by_name/${name}`)}
   // get_product_by_category(category: string): Observable<any> {return this.http.get(`${this.api}get_product_by_category/${category}`)}

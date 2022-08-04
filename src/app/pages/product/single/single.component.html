@@ -20,7 +20,7 @@
         <a id="fun1" routerLink="/edit_product/{{obj._id}}" type="button" class="btn btn-warning">Edit Product</a>
         <a id="fun1" type="button" class="btn btn-danger" (click)="delete_product(obj._id)">Delete Product</a>
     </div>
-    
+
     <span style="margin:3% 1.5% 3% 0%" class="p">Ratings & Reviews:</span>
     <!-- /// for loooooooooooop here  -->
     <button id="btn_add_comment" type="button" title="Click To Add Comment" class="btn btn-primary"
@@ -29,7 +29,7 @@
     </button>
 
     <div style="margin-left:2%;" *ngFor="let comment of obj.comments">
-        <span class="p">{{comment.userName}}: &nbsp;</span> <span>{{comment.comment}}</span> <br>
+       <a title="click here to delete comment" id="commentid98" (click)="delete_comment(obj._id,comment._id)"> <span class="p">{{comment.userName}}: &nbsp;</span> <span>{{comment.comment}}</span></a> <br>
     </div>
     
     <!-- Modal -->
@@ -47,7 +47,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" (click)="add_comment(obj._id,newcomment)" class="btn btn-primary">Reply</button>
+                    <a  (click)="add_comment(obj._id,newcomment)" class="btn btn-primary">Reply</a>
                     
                 </div>
             </div>

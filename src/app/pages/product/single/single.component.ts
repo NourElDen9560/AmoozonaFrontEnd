@@ -29,11 +29,19 @@ export class SingleComponent implements OnInit {
     )
   }
 
+  delete_comment(id: any,comment:any) {
+    this.data.delete_comment(id,comment).subscribe(
+      res => { console.log(res); this.router.navigate([`/single/${id}`]); },
+      err => console.log(err),
+      () => { this.router.navigate([`/single/${id}`]); }
+    )
+  }
+
   add_comment(id: any , newcomment: any) {
     this.comment = {"comment":newcomment.value};
     // console.log("comment must be here "+ this.comment )
     this.data.add_comment(id,this.comment).subscribe(
-      res => {  console.log(res);   },
+      res => {  console.log(res); this.router.navigate([`/single/${id}`]);   },
       err => { alert(err.error.message); console.log(err);},
       () => { this.router.navigate([`/single/${id}`]); }
     )

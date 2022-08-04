@@ -36,6 +36,13 @@ span:hover{
     left: 1050px;
      
 }
+
+#commentid98{
+    text-decoration: none;
+    color: black;
+}
+#commentid98:hover{color:red;}
+
 .image:hover{
     transform: scale(1.8);
     transition: transform 0.5s;
