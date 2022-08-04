@@ -25,6 +25,12 @@ export class UserapiService {
     return this.http.post(`${this.api}addtocart/${id}`, {})
   }
 
+  // change_img(img:any,id:any): Observable<any> {
+  //   return this.http.post(`${this.api}change_img/${id}`,img)
+  // }
+
+
+
   // changepassword(Data:any):Observable<any>{
 
   // }

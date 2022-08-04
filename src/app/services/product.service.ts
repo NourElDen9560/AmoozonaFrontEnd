@@ -23,6 +23,10 @@ export class ProductService {
   add_rate(id:any,rate:any): Observable<any> {console.log("comment "+ rate); return this.http.post(`${this.api}add_rate/${id}`,rate)}
 
   
+  changeImage(img:any,id:any): Observable<any> {return this.http.post(`${this.api}changeImage/${id}`,img)}
+
+
+
   //////////////////////////////////////////
   // get_product_by_name(name: string): Observable<any> {return this.http.get(`${this.api}get_product_by_name/${name}`)}
   // get_product_by_category(category: string): Observable<any> {return this.http.get(`${this.api}get_product_by_category/${category}`)}

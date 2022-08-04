@@ -20,7 +20,9 @@
     "@angular/platform-browser": "^14.1.0",
     "@angular/platform-browser-dynamic": "^14.1.0",
     "@angular/router": "^14.1.0",
+    "@cloudinary/angular-5.x": "^1.5.3",
     "bootstrap": "^5.2.0",
+    "ng2-file-upload": "^1.4.0",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
