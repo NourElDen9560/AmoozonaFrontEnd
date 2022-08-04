@@ -41,13 +41,12 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Write Your Comment Here   
-                    <input type="text" ngModel #newcomment="ngModel" name="newcomment" >
-
+                    <b>Comment : </b> <input type="text" ngModel #newcomment="ngModel" name="newcomment" >
+                  &nbsp;  <b>Rate : </b> <input type="number" ngModel #rate="ngModel" name="rate" >
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a  (click)="add_comment(obj._id,newcomment)" class="btn btn-primary">Reply</a>
+                    <a  (click)="add_comment(obj._id,newcomment,rate)" class="btn btn-primary">Reply</a>
                     
                 </div>
             </div>

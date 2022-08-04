@@ -1,14 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators , ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
 
-@Component({
-  selector: 'app-editproduct',
-  templateUrl: './editproduct.component.html',
-  styleUrls: ['./editproduct.component.css']
-})
+// export class ItemDetailComponent implements OnInit {
+//   ngOnInit(): void {
+//     throw new Error('Method not implemented.');
+//   }
+//   @Input() item = ''; // decorate the property with @Input()
+// }
+
+@Component({selector: 'app-editproduct', templateUrl: './editproduct.component.html', styleUrls: ['./editproduct.component.css'] })
+
 export class EditproductComponent implements OnInit {
+
+  // @Input() item = ''; // decorate the property with @Input()
+  // currentItem = 'Television';
 
   constructor(private data:ProductService , private  _activated:ActivatedRoute , private router:Router) { }
 
@@ -41,7 +48,6 @@ export class EditproductComponent implements OnInit {
  
     ngOnInit(): void {   this.editForm.patchValue(this.arr);  }
 
-  // ngOnInit(): void { this.listall()  }
 }
 
  

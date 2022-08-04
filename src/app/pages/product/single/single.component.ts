@@ -18,7 +18,7 @@ export class SingleComponent implements OnInit {
   obj: any = {};
   checkOtpValueFlag = false;
   comment: any ="";
-
+  userName: any = "";
   CheckOtp = new FormGroup({ otp: new FormControl('', [Validators.required]), })
 
   delete_product(id: any) {
@@ -37,14 +37,30 @@ export class SingleComponent implements OnInit {
     )
   }
 
-  add_comment(id: any , newcomment: any) {
+  add_comment(id: any , newcomment: any , rate: any) {
+
+    
     this.comment = {"comment":newcomment.value};
-    // console.log("comment must be here "+ this.comment )
+    // this.userName = {"userName":"test" };
+    this.userName = {"userName":this.obj.userName };
+
+    this.comment = Object.assign(this.comment, this.userName);
+    this.obj.comments.push(this.comment);
+    console.log("rate"+rate.value);
+
+    if(rate.value ){
+      const myRate = {"rate":rate.value};
+
+      this.data.add_rate(id,myRate).subscribe(
+        res => { console.log(res); this.router.navigate([`/single/${id}`]);   },
+        err => { alert(err.error.message); console.log(err);},
+        () => { })
+      }
+    
     this.data.add_comment(id,this.comment).subscribe(
       res => {  console.log(res); this.router.navigate([`/single/${id}`]);   },
       err => { alert(err.error.message); console.log(err);},
-      () => { this.router.navigate([`/single/${id}`]); }
-    )
+      () => { })
   }
 
   list_single_product() {

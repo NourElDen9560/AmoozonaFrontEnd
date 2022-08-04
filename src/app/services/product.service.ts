@@ -2,14 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root' })
 
 export class ProductService {
 
   private api = `http://localhost:3000/api/product/`;
-  public variable_to_transfer_between_model = 'Hello World';
+
+  // public variable_to_transfer_between_model = 'Hello World';
+
   constructor(private http: HttpClient) { }
 
   add_prodcut(Data: any): Observable<any> {return this.http.post(`${this.api}add_prodcut`, Data)}
@@ -19,6 +19,8 @@ export class ProductService {
   delete_product(id:any): Observable<any> {return this.http.delete(`${this.api}delete_product/${id}`)}
   add_comment(id:any,Data:any): Observable<any> {console.log("comment "+ Data); return this.http.post(`${this.api}add_comment/${id}`,Data)}
   delete_comment(id:any,comment:any): Observable<any> {console.log("comment "+ comment); return this.http.delete(`${this.api}delete_comment/${id}/${comment}`)}
+
+  add_rate(id:any,rate:any): Observable<any> {console.log("comment "+ rate); return this.http.post(`${this.api}add_rate/${id}`,rate)}
 
   
   //////////////////////////////////////////
