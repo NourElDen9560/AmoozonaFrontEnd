@@ -13,7 +13,17 @@ Invalid title
     </div>
     
   </div>
+  <div class="form-group">
 
+    <label for="Brand">Brand</label>
+    <input type="text" class="form-control" formControlName="Brand"  id="Brand" placeholder="Brand" name="Brand" required >
+    <div class="alert alert-danger" *ngIf="this.editForm.controls['Brand'].invalid">
+     <span >
+Invalid brand
+     </span> 
+    </div>
+    
+  </div>
 
 <div class="form-group"  >
   <label for="price">price</label>      
@@ -55,7 +65,7 @@ Invalid details
 
 
 
-    <button type="submit" mat-fab class="btn98" (click)="edit_product()" [disabled]="editForm.invalid">Edit</button>
+    <button type="submit" mat-fab class="btn btn-danger" style="margin-top: 10px" (click)="edit_product()" [disabled]="editForm.invalid">Edit</button>
   <!-- get msg sucess or not  -->
   </form>
   

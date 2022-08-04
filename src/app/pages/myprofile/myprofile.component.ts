@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 import { User } from 'src/app/interfaces/user';
 import { UserapiService } from 'src/app/services/userapi.service';
 import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
@@ -11,13 +12,13 @@ import { NavbarComponent } from 'src/app/shared/navbar/navbar.component';
 export class MyprofileComponent implements OnInit {
 UserData:User ={
   name:"" ,
-  age: 12,
+  age: 0,
   email:"" ,
   password:"",
  
 }
 ArrOfCart:any[]=[]
-  constructor(private user:UserapiService) { 
+  constructor(private user:UserapiService  , private _activated:ActivatedRoute ,private router:Router) { 
   }
 
   ngOnInit(): void {
@@ -32,6 +33,19 @@ this.UserData = res.data;
       },
       (err)=>{console.log(err) }
     ) 
+  }
+  id:any= this._activated.snapshot.paramMap.get('id'); //get id parameter
+  
+  RemoveProduct(id:string){
+this.user.RemoveFromcART(id).subscribe(
+  (res)=>{
+    console.log(res);
+  } ,
+  (err)=>{console.log(err) } ,
+  ()=>{
+    this.ngOnInit() 
+  }
+)
   }
 
 }

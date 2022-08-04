@@ -1,61 +1,78 @@
-.product_container{
-    display: inline-block;
-    flex-direction: column;
-    /* align-items: center; */
-    /* justify-content: center; */
-    margin: 2%;
-    text-decoration: none;
-    color: black;
-
-}
-.image{
-    
-    -webkit-transition: width 2s, height 2s, -webkit-transform 2s;
-    transition: width 2s, height 2s ;
-
-}
-
-.image:hover{
-   
-    transform: scale(1.1);
-    transition: transform 0.5s;
-
+.intro {
+    background-image: url("https://preview.colorlib.com/theme/meal2/images/xhero_bg.jpg.pagespeed.ic.08xBTGP0Gm.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    min-height: 700px;
+    width: auto;
+    position: relative;
+    transition: all 2s ease-in-out;
+  }
+  .intro::before{
+      background-color: black;
+      position: absolute;
+      content: "";
+      opacity: 0.5;
+      top:0; 
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+  }
+  .intro_main{
+      position: relative;
+      z-index: 2;
+      min-height: 678px;
+  }
+  .intro .some_words {
+    padding-top: 50px;
+    color: white;
+    font-weight: bold;
+  }
+  .intro .some_words h6 {
+    font-style: italic;
+    font-size: 25px;
   }
 
- 
-
-.title{
-    font-size: 1.5em;
-    font-weight: bold;
-    margin: 4% 0% 0% 0%;
-}
-.title:hover{
-   color:aqua;
-}
-.price{
-    font-size: 1.5em;
-    font-weight: bold;
-    font-family: 'Roboto', sans-serif;
-    margin: 0% 0% 0% 45%;
- 
-}
-.price:hover{
-    color: greenyellow;
-}
-.product_footer{
-     margin: 4% 0% 0% 0%;
-}
-.rate_num{
-    font-weight: bold;
- }
- .rate_num:hover{
-    color: blue;
- }
-.rate_icon{width: 30px;height: 30px;
-    transition: width 2s, height 2s , transform 2s; ;
-}
-
-.rate_icon:hover{
-
-    transform: rotate(360deg)
-}
+  .intro .some_words h2 {
+    margin-top: 10px;
+    font-size: 50px;
+    font: weight 300px;
+    display: inline-flex;
+  }
+  .intro .some_words h2 span{
+      color:var(--maincolor);
+      font-size: 50px;
+      font-weight: bold;
+      margin-left: 10px;
+  }
+  .intro .some_words a {
+    text-decoration: none;
+  }
+  .intro .some_words span {
+    font-size: 25px;
+    display: block;
+    margin-bottom: 40px;
+  }
+  .intro .some_words button {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 30px;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: .05rem;
+    background-color: var(--maincolor);
+    color: white;
+  }
+  .intro .social {
+    position: absolute;
+    bottom:20px;
+    right: 20px;
+  }
+  .intro .social i {
+    margin-left: 15px;
+  }

@@ -15,6 +15,8 @@ import { ListallproductComponent } from './pages/product/listallproduct/listallp
 import { AuthInterceptor } from './services/interceptor/auth.interceptor';
 import { MyprofileComponent } from './pages/myprofile/myprofile.component';
 import { EditproductComponent } from './pages/product/edit/editproduct.component';
+import { ChangepasswordComponent } from './pages/changepassword/changepassword.component';
+import { UploadImgComponent } from './pages/upload-img/upload-img.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,7 @@ import { EditproductComponent } from './pages/product/edit/editproduct.component
     AddproductComponent,
     ListallproductComponent ,
     SingleComponent,
-    MyprofileComponent ,EditproductComponent
+    MyprofileComponent ,EditproductComponent, ChangepasswordComponent, UploadImgComponent
   ],
   imports: [
     BrowserModule,

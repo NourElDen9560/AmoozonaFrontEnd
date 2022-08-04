@@ -28,6 +28,9 @@ span:hover{
     left: 1050px;
      
 }
+.btn{
+    margin: 20px;
+}
 .image:hover{
     transform: scale(1.8);
     transition: transform 0.5s;

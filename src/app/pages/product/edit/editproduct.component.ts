@@ -15,7 +15,7 @@ export class EditproductComponent implements OnInit {
   editForm = new FormGroup({
     title: new FormControl('',[Validators.required,Validators.minLength(3)]),
     price: new FormControl('',[Validators.required]),
-    brand: new FormControl(''),
+    Brand: new FormControl(''),
     quantity: new FormControl('',[Validators.required,Validators.minLength(3)]),
     details: new FormControl('',[Validators.required,Validators.minLength(3)]),
     image: new FormControl('')
@@ -23,12 +23,12 @@ export class EditproductComponent implements OnInit {
 
   get title() {return this.editForm.get('title');}
   get price() {return this.editForm.get('price');}
-  get brand() {return this.editForm.get('brand');}
+  get brand() {return this.editForm.get('Brand');}
   get quantity() {return this.editForm.get('quantity');}
   get details() {return this.editForm.get('details');}
   get image() {return this.editForm.get('image');}
 
-  arr:any= {title:'pc desktop',price:10,brand:'hp',quantity:5,details:'more data '};
+  arr:any= {title:'',price:0,brand:'',quantity:5,details:' '};
 
   id:any= this._activated.snapshot.paramMap.get('id'); //get id parameter
   
@@ -40,7 +40,19 @@ export class EditproductComponent implements OnInit {
       ()=>{ this.router.navigate([`single/${this.id}`]);  }
     )}
  
-    ngOnInit(): void {   this.editForm.patchValue(this.arr);  }
+    ngOnInit(): void { 
+      this.data.GetMyProduct(this.id).subscribe(
+        res=>{
+          this.arr = res.data;
+        } ,
+        (err)=>console.log(err),
+        ()=>{
+          this.editForm.patchValue(this.arr);
+        }
+      )
+      
+      
+      }
 
   // ngOnInit(): void { this.listall()  }
 }

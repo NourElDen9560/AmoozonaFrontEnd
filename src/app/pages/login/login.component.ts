@@ -13,10 +13,11 @@ login = new FormGroup({email:new FormControl('', Validators.required) ,
 password:new FormControl('', Validators.required) ,
 })
   constructor(private data: UserapiService , private router: Router) { }
-
+  ISLOGGED = false; 
   ngOnInit(): void {
-   
+    this.ISLOGGED=false;
   }
+  
   Login(){
     // console.log("test")
     this.data.LoginApi(this.login.value).subscribe(
@@ -28,7 +29,10 @@ password:new FormControl('', Validators.required) ,
     },
       err=>console.log(err),
       ()=>{
+       this.data.isLogin = true;
+       // window.location.reload();
         this.router.navigate(['/']);
+        
       }
     )
   }

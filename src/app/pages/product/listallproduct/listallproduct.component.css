@@ -1,0 +1,92 @@
+
+  body {
+    
+    font-family: 'Nunito', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
+   
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+.intro {
+    background-image: url("https://th.bing.com/th/id/R.2d7164f1eb7d25879122c4421e963ae6?rik=77ybWUTdDuMkvQ&pid=ImgRaw&r=0");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
+    min-height: 450px;
+    width: auto;
+    position: relative;
+    transition: all 2s ease-in-out;
+  }
+  .spIntro{
+    line-height: 3;
+    
+  }
+  .intro::before{
+      background-color: black;
+      position: absolute;
+      content: "";
+      opacity: 0.5;
+      top:0; 
+      left: 0;
+      bottom: 0;
+      right: 0;
+      z-index: 1;
+  }
+  .intro_main{
+      position: relative;
+      z-index: 2;
+      min-height: 678px;
+  }
+  .intro .some_words {
+    padding-top: 50px;
+    color: white;
+    font-weight: bold;
+  }
+  .intro .some_words h6 {
+    font-style: italic;
+    font-size: 25px;
+  }
+
+  .intro .some_words h2 {
+    margin-top: 10px;
+    font-size: 50px;
+    font: weight 300px;
+    display: inline-flex;
+  }
+  .intro .some_words h2 span{
+      color:var(--maincolor);
+      font-size: 50px;
+      font-weight: bold;
+      margin-left: 10px;
+  }
+  .intro .some_words a {
+    text-decoration: none;
+  }
+  .intro .some_words span {
+    font-size: 25px;
+    display: block;
+    margin-bottom: 40px;
+  }
+  .intro .some_words button {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 30px;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: .05rem;
+    background-color: var(--maincolor);
+    color: white;
+  }
+  .intro .social {
+    position: absolute;
+    bottom:20px;
+    right: 20px;
+  }
+  .intro .social i {
+    margin-left: 15px;
+  }

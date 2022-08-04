@@ -4,3 +4,7 @@ span{
 section{
     margin-bottom: 50px;
 }
+.avatar{
+    border-radius: 70%;
+    height: 102px;
+}

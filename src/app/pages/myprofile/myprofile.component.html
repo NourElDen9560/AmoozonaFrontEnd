@@ -1,9 +1,14 @@
 <h2 class="text-center">Welcome to your Account </h2>
 
-<section class="container-fluid">
+<div class="alert alert-danger text-center" *ngIf="!UserData.name">
+Please Login You are Un Auth
+</div>
+
+<section class="container-fluid" *ngIf="UserData.name">
 <div class="text-center">
     <div class="card" >
         <div class="card-body">
+          <img src='http://localhost:3000/{{UserData.image}}' class="avatar" style="border-radius:50% ;">
           <h2 class="card-title">Welcome <span> {{UserData.name}}</span></h2>
           <p class="card-text" style="color: blue;">You Can Change your profile</p>
         </div>
@@ -12,8 +17,8 @@
           <li class="list-group-item">Age : <span>{{UserData.age}}</span></li>
         </ul>
         <div class="card-body">
-          <a href="#" class="card-link btn btn-danger">Change YourPassword</a>
-          <a href="#" class="card-link btn btn-primary">Upload Image</a>
+          <a routerLink="/changepassword" class="card-link btn btn-danger">Change YourPassword</a>
+          <a href="#" class="card-link btn btn-primary" routerLink="/uploadimg">Upload Image</a>
         </div>
       </div>
 </div>
@@ -21,15 +26,16 @@
 <h2 style="color:darkgreen ; font-size: 40px;" class="text-center">Your Cart</h2>
 </section>
 <section class="mycart">
+  
     <div class="row row-cols-1 row-cols-md-3 g-4" >
         <div class="col" *ngFor="let p of ArrOfCart">
           <div class="card">
             <img src="../../../assets/product_img/p1.jpg" class="card-img-top" alt="...">
             <div class="card-body">
               <h2 class="card-title text-center" style="color:blue ;">{{p.productName}}</h2>
-             
+              
             </div>
-            <button class="btn btn-danger">Remove From Cart</button>
+            <button class="btn btn-danger" (click)="RemoveProduct(p.ProductId)">Remove From Cart</button>
           </div>
         </div>
         </div>

@@ -1,12 +1,56 @@
  
 
- <h2>Hello To Our Products</h2>
- <a *ngFor="let p of products" class="product_container" routerLink="/single/{{p._id}}" >  
-     <img class="image" src="assets/product_img/p1.jpg" alt="{{p.title}}">
-     <h1 class="title">{{p.title}}</h1>
-     <div class="product_footer">
-         <!-- <span class="rate_num"><img class="rate_icon" src="assets/product_img/rate.png ">{{p.rates.length}}</span>
-         <span class="price">{{p.price}} EGP</span> -->
-     </div>
-     <!-- product deatails in single show not in all  +++ sold + brand + quanitity  + comments -->
- </a>
+ <!-- <h2>Helloooo To Our Products</h2> -->
+ <section class="intro">
+    <div class="container intro_main">
+        <div class="some_words text-center">
+            <h2 style="color: rgb(192 201 253);" > Welcome To Our <span> Store </span> </h2>
+            <span class="spIntro">
+                Another free template by
+                <a style="color: rgb(0, 13, 90)">AmaaZoonA</a> Far far away,
+                behind the word <br />
+                mountains, far from the countries Vokalia and Consonantia,<br />
+                there live the blind texts.
+            </span>
+        </div> <!-- end of some words -->
+      
+    </div> <!-- end container -->
+</section>
+<hr>
+<h2 class="text-center">Welcome To Out Products</h2>
+<div class=" text-center" style="margin-bottom: 20px;">
+    
+    <input  style="background-color: white; color: black; cursor:auto" class="btn btn-primary rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon"[(ngModel)]="filterproduct" type="text" placeholder="Enter your product name" (change)="Filtration()" />
+    <button type="button" class="btn btn-outline-danger">search</button>
+
+</div>
+<!-- <input  [(ngModel)]="filterproduct" type="text" placeholder="Enter your product name" (change)="Filtration()"> -->
+<section class="container" style="margin-bottom: 50px;">
+<div class="alert alert-danger text-center" *ngIf="ArrOfData.length==0">
+No Products With This Name
+</div>
+<div class="row row-cols-1 row-cols-md-4 g-4">
+    <div class="col" *ngFor="let p of ArrOfData" class="product_container" routerLink="/single/{{p._id}}">
+      
+
+        <div class="card" style="width: 18rem;padding: 10px;">
+            <img src="assets/product_img/p1.jpg" class="card-img-top" alt="...">
+            <div class="card-body text-center" style="color: blueviolet;padding: 20px;">
+                <h2 class="card-title"><span style="color: red;">Title</span>: {{p.title}}</h2>
+                <h4><span style="color: red;">Brand</span>:{{p.Brand}}</h4>
+                <p class="card-text"><span style="color: red;">Cost</span>:{{p.price}}</p>
+                <p class="card-text" style="color: teal;"><span style="color: red;">Details</span>: {{p.details}}</p>
+                
+                
+              
+            </div>
+          </div>
+
+
+       
+       
+    </div>
+  
+  </div>
+ 
+</section>
