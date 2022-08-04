@@ -13,7 +13,7 @@ export class ListallComponent implements OnInit {
     this.data.list_all_products().subscribe(
       res=> {
         this.products = res.data; 
-        console.log("test"+ this.products)
+        // console.log("test"+ this.products)
       },
       err=>console.log(err),
       ()=>{this.router.navigate(['/']);}

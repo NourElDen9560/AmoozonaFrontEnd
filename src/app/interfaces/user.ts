@@ -5,7 +5,7 @@ export interface User {
     otp?:Number ,
     age?:Number ,
     email:string ,
-    password:number ,
+    password:string ,
     token?:[
         token?:string 
     ]

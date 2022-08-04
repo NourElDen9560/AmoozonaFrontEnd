@@ -15,7 +15,7 @@
       }
  
 #btn_add_comment{
-    margin:3% 0% 0% -74%;
+    margin:0% 0% 0% 0%;
     max-width: 63px;
     max-height: 46px;
 }
@@ -44,8 +44,8 @@ span:hover{
 #fun1,#fun2{
     position: relative;
     width: 135px;
-    top: -115px;
-    left: 966px;
+    top: 114px;
+    left: 847px;
     margin: 0% 1% 1% 1%;
     font-weight: bold;
 }

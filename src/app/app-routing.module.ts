@@ -7,18 +7,23 @@ import { ListallComponent } from './pages/product/listall/listall.component';
 import { SingleComponent } from './pages/product/single/single.component';
 import { AddproductComponent } from './pages/product/add/addproduct.component';
 import { EditproductComponent } from './pages/product/edit/editproduct.component';
+import { MyprofileComponent } from './pages/myprofile/myprofile.component';
+
 
 const routes: Routes = [
-  {path: 'register', component:RegisterComponent},
+  {path:'register', component:RegisterComponent},
   {path:'login' , component:LoginComponent},
+  {path:'myaccount', component:MyprofileComponent},
+
 /////////////// Prodcut Area /////////////////////////////////////////////////
   { path: '', component:ListallComponent },
   { path: 'single/:id', component:SingleComponent }, 
-  { path: 'addproduct', component:AddproductComponent }, /// auth on path ???/ here in angular ????
+  { path: 'addproduct', component:AddproductComponent },  
   { path: 'edit_product/:id', component:EditproductComponent},
-  
-   
 
+  { path: '**', redirectTo: '' }
+
+  
 ];
 
 @NgModule({

@@ -38,7 +38,7 @@
 
   <div *ngIf="details?.touched && details?.invalid" class="alert alert-warning">{{ details?.errors|json}}</div>
 
-  <input  formControlName="image" name="image" type="file" class="file-upload" onchange="console.log(event.target.files)"> 
+ <input  formControlName="image" name="image" type="file" class="file-upload" >   <!-- onchange="console.log(event.target.files)" -->
   
   <div *ngIf="image?.touched && image?.invalid" class="alert alert-warning">{{ image?.errors|json}}</div>
 

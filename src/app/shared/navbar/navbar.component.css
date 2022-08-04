@@ -1,3 +1,7 @@
-.active {
-    color: blue !important;
+ 
+.btn{ min-width: 150px; }
+    
+
+.btn.btn-dark{
+    margin-top: 9px;
 }

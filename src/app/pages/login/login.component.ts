@@ -25,7 +25,7 @@ password:new FormControl('', Validators.required) ,
       res=> {
         alert("sucessfully logged in")
         console.log(res)
-        alert(res.message)
+        // alert(res.message)
         localStorage.setItem('token', res.data.token)
       }, 
       err=>{

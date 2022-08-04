@@ -1,32 +1,28 @@
 
-<div class="card text-center" >
-    <div class="card-body">
+<div class="card text-center" style="max-width:50%; margin: 2% 0% 40% 20%;" >
+    
+  <div class="card-body">
 
 
 <form  [formGroup]="login" (submit)="Login()">
     <div class="form-group"  >
       <label for="Email">Email address</label>      
-      <input type="email" class="form-control" formControlName="email" id="Email" placeholder="Enter email" name="Email" required  >
-      <div class="alert alert-danger" *ngIf="this.login.controls['email'].invalid" >
+      <input type="email" class="form-control" formControlName="email" id="Email" placeholder="Enter email" name="email" required  >
+      <div class="alert alert-danger" *ngIf="this.login.controls['email'].invalid && this.login.controls['email'].touched" >
         <!-- {{this.login.controls['email'].invalid}} -->
-      <span >
-        Invalid Email
-               </span> 
+      <!-- <span ></span>  -->Invalid Email
       </div>
     </div>
     <div class="form-group">
       <label for="passwordEmail">Password</label>
       <input type="password" class="form-control" formControlName="password"  id="passwordEmail" placeholder="Password" name="Password" required >
-      <div class="alert alert-danger" *ngIf="this.login.controls['password'].invalid">
-       <span >
-Invalid Paassword
-       </span> 
+      <div class="alert alert-danger" *ngIf="this.login.controls['password'].invalid && this.login.controls['password'].touched">
+          Invalid Paassword
       </div>
       
     </div>
-    
-    <button type="submit" class="btn btn-primary" >Submit</button>
+     
+    <button type="submit"  class="btn btn-primary" >Submit</button>
   </form>
-
     </div>
 </div>

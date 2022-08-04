@@ -9,12 +9,12 @@
           <!-- <li class="nav-item">
             <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" aria-current="page" routerLink="/home">Home</a>
           </li> -->
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/about">About</a>
-          </li>
+          </li> -->
           <form class="d-flex" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+            <input class="form-control me-2" style="width: 558px;" type="search" placeholder="Write something ..." aria-label="Search">
+            <button class="btn btn-outline-dark" type="submit">Search</button>
           </form>
         
           
@@ -23,18 +23,22 @@
             <li class="nav-item " >
            
 
-                <a class="nav-link  "  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/register">  <button class="btn btn-danger" >Register</button></a>
+                <a class="nav-link  "  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/register">  <button class="btn btn-dark" >Register</button></a>
               </li>
 
               <li class="nav-item " >
            
 
-                <a class="nav-link  "  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/addproduct">  <button class="btn btn-danger" >Add Product</button></a>
+                <a class="nav-link  "  routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/addproduct">  <button class="btn btn-dark" >Add Product</button></a>
               </li>
 
               
               <li class="nav-item">
                 <a class="nav-link" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}" routerLink="/login"><button class="btn btn-dark" >Sign In</button></a>
+              </li>
+
+              <li class="nav-item">
+                <a class="nav-link" routerLink="/myaccount" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  ><button class="btn btn-dark" (click)=" MyAccount()" > My Profile</button></a>
               </li>
               
         </ul>

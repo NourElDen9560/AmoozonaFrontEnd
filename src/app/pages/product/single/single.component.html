@@ -12,15 +12,24 @@
         <a routerLink="#"><img class="rate_icon" src="assets/product_img/rate.png "></a>
     </span> <br>
 
+    <img class="image" src="assets/product_img/p1.jpg" alt="{{obj.title}}">
+
+    <div class="action">
+        <!-- if auth it will be apper  -->
+        <a id="fun1" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Add To Card</a>
+        <a id="fun1" routerLink="/edit_product/{{obj._id}}" type="button" class="btn btn-warning">Edit Product</a>
+        <a id="fun1" type="button" class="btn btn-danger" (click)="delete_product(obj._id)">Delete Product</a>
+    </div>
+    
     <span style="margin:3% 1.5% 3% 0%" class="p">Ratings & Reviews:</span>
     <!-- /// for loooooooooooop here  -->
-    <button id="btn_add_comment" type="button" title="Click To Add Comment" (click)="addcomment(obj._id)" class="btn btn-primary"
+    <button id="btn_add_comment" type="button" title="Click To Add Comment" class="btn btn-primary"
         data-bs-toggle="modal" data-bs-target="#exampleModal">
         <img src="assets/product_img/addcomment.png" width="35px" height="35px" alt="Comment" srcset="">
     </button>
 
     <div style="margin-left:2%;" *ngFor="let comment of obj.comments">
-        <span class="p">{{comment.userId}}: &nbsp;</span> <span>{{comment.comment}}</span> <br>
+        <span class="p">{{comment.userName}}: &nbsp;</span> <span>{{comment.comment}}</span> <br>
     </div>
     
     <!-- Modal -->
@@ -32,25 +41,20 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Write Your Comment Here <input type="text" name="comment">
-                    <a id="btn_send" href="#" class="btn btn-primary">Send</a>
+                    Write Your Comment Here   
+                    <input type="text" ngModel #newcomment="ngModel" name="newcomment" >
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" (click)="add_comment(obj._id,newcomment)" class="btn btn-primary">Reply</button>
+                    
                 </div>
             </div>
         </div>
     </div>
 
 
-    <img class="image" src="assets/product_img/p1.jpg" alt="{{obj.title}}">
-
-    <div class="action">
-        <!-- if auth it will be apper  -->
-        <a id="fun1" routerLink="/edit_product/{{obj._id}}" type="button" class="btn btn-warning">Edit Product</a>
-        <a id="fun2" routerLink="/delete_product/{{obj._id}}" type="button" class="btn btn-danger"
-            (click)="delete_product(obj._id)">Delete Product</a>
-    </div>
+   
     <!-- product deatails in single show not in all  +++ sold + brand + quanitity  + comments -->
 </div>
