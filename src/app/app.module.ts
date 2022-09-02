@@ -17,6 +17,7 @@ import { MyprofileComponent } from './pages/myprofile/myprofile.component';
 import { EditproductComponent } from './pages/product/edit/editproduct.component';
 import { ChangepasswordComponent } from './pages/changepassword/changepassword.component';
 import { UploadImgComponent } from './pages/upload-img/upload-img.component';
+import { ListallComponent } from './pages/product/listall/listall.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { UploadImgComponent } from './pages/upload-img/upload-img.component';
     LoginComponent,
     HomeComponent,
     AddproductComponent,
+    ListallComponent,
     ListallproductComponent ,
     SingleComponent,
     MyprofileComponent ,EditproductComponent, ChangepasswordComponent, UploadImgComponent

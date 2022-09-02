@@ -13,14 +13,22 @@ export class AddproductComponent implements OnInit {
   constructor(private data:ProductService , private router: Router) { }
 
   ngOnInit(): void {}
+  ImdData= new FormGroup({
+    img:new FormControl('' , Validators.required) 
+    }) 
 
+  Title:any
+  NewImage:any
+  getImage(event:any){
+    this.NewImage = event.target.files[0]
+  }
   add_product_from = new FormGroup({
    title: new FormControl('',[Validators.required,Validators.minLength(3)]),
    price: new FormControl('',[Validators.required]),
    Brand: new FormControl('',[Validators.required,Validators.minLength(3)]),
    quantity: new FormControl('',[Validators.required,Validators.minLength(3)]),
    details: new FormControl('',[Validators.required,Validators.minLength(3)]),
-   image: new FormControl('')
+   img: new FormControl('')
  });
 
  get title() {return this.add_product_from.get('title');}
@@ -30,7 +38,11 @@ export class AddproductComponent implements OnInit {
  get details() {return this.add_product_from.get('details');}
  get image() {return this.add_product_from.get('image');}
 
- AddProduct(add_product_from:FormGroup){
+ AddProduct(){
+ 
+  const Form = new FormData();
+    Form.append("img" , this.NewImage , this.NewImage.name);
+ console.log(Form)
    this.data.add_prodcut(this.add_product_from.value).subscribe(
      res=>alert("Product Added sucessfully"),
      err=>console.log(err),

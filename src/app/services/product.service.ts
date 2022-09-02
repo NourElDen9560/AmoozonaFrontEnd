@@ -19,7 +19,7 @@ export class ProductService {
   delete_product(id:any): Observable<any> {return this.http.delete(`${this.api}delete_product/${id}`)}
 /////////////////////
 GetMyProduct(id:string): Observable<any> {return this.http.get(`${this.api}myproduct/${id}`)}
-  add_comment(id:any): Observable<any> {return this.http.delete(`${this.api}add_comment/${id}`)}
+  add_comment(id:any , Data: any): Observable<any> {return this.http.post(`${this.api}add_comment/${id}` , Data)}
 
   /////////////////////
   get_product_by_name(name: string): Observable<any> {return this.http.get(`${this.api}get_product_by_name/${name}`)}

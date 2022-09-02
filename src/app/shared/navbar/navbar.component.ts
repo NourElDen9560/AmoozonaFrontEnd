@@ -12,7 +12,7 @@ import { UserapiService } from 'src/app/services/userapi.service';
 })
 export class NavbarComponent implements OnInit {
 //, public myprofilecomponent:MyprofileComponent
-  constructor(public user:UserapiService  , private router:Router) { }
+  constructor(public user:UserapiService   , private router:Router) { }
 
   LogInOrNot = false;
   MyData:User={
@@ -45,7 +45,7 @@ this.MyData = res.data;
       (err)=>{console.log(err) }
       ,
       ()=>{
-        
+        this.user.AdminOrNot = false;
         localStorage.removeItem('UserToken')
         this.LogInOrNot=false;
  this.router.navigate(['/login']);

@@ -1,125 +1,32 @@
-<form class="example-form" [formGroup]="add_product_from" (ngSubmit)="AddProduct(add_product_from)">
- 
-    <div class="form-group">
-        <label for="title">title</label>
-        <input type="text" class="form-control" formControlName="title"  id="title" placeholder="title" name="title" required >
-        <div class="alert alert-danger" *ngIf="this.add_product_from.controls['title'].invalid">
-         <span >
-  Invalid title
-         </span> 
+
+
+  <div class="registration-form">
+    <form  [formGroup]="add_product_from" (ngSubmit)="AddProduct()">
+       <h2 class="form-title text-center" style="color: dimgrey;">Welcome Admin Add Your Product  </h2>
+        <div class="form-group">
+          <input type="text" class="form-control item" formControlName="title"  id="title" placeholder="title" name="title" required >
+        </div>
+        <div class="form-group">
+          <input type="number" class="form-control item" formControlName="price" id="price" placeholder="Enter price" name="price" required  >
+        </div>
+        <div class="form-group">
+          <input type="text" class="form-control item" formControlName="Brand"  id="brand" placeholder="brand" name="Brand" required >
+        </div>
+        <div class="form-group">
+          <input type="number" class="form-control item" formControlName="quantity"  id="quantity" placeholder="quantity" name="quantity" required >
         </div>
         
-      </div>
-
-
-    <div class="form-group"  >
-      <label for="price">price</label>      
-      <input type="number" class="form-control" formControlName="price" id="price" placeholder="Enter price" name="price" required  >
-      <div class="alert alert-danger" *ngIf="this.add_product_from.controls['price'].invalid" >
-      <span >
-        Invalid price
-               </span> 
-      </div>
-    </div>
-
-
-
-    <div class="form-group">
-      <label for="brand">brand</label>
-      <input type="text" class="form-control" formControlName="Brand"  id="brand" placeholder="brand" name="Brand" required >
-      <div class="alert alert-danger" *ngIf="this.add_product_from.controls['Brand'].invalid">
-       <span >
-Invalid brand
-       </span> 
-      </div>
-      
-    </div>
-    
-
-    <div class="form-group">
-        <label for="Age">quantity</label>
-        <input type="number" class="form-control" formControlName="quantity"  id="quantity" placeholder="quantity" name="quantity" required >
-        <div class="alert alert-danger" *ngIf="this.add_product_from.controls['quantity'].invalid">
-         <span >
-  Invalid quantity
-         </span> 
+        <div class="form-group">
+          <input type="text" class="form-control item" formControlName="details"  id="details" placeholder="details" name="details" required >
         </div>
-        
-      </div>
-
-
-      <div class="form-group">
-        <label for="details">details</label>
-        <input type="text" class="form-control" formControlName="details"  id="details" placeholder="details" name="details" required >
-        <div class="alert alert-danger" *ngIf="this.add_product_from.controls['details'].invalid">
-         <span >
-  Invalid details
-         </span> 
+        <div class="form-group">
+          <input type="file" class="form-control" formControlName="img" (change)="getImage($event)" >
         </div>
-        
-      </div>
 
-
-
-
-      <div class="form-group">
-        <input type="file" class="form-control" formControlName="image"  >
-      </div>
-
-
-    
-      <div class="form-group submit">
-        <button type="submit" class="btn btn-primary" [disabled]="this.add_product_from.invalid"  >Submit</button>
-      </div>
-
-
-    <!-- <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Product Name</mat-label>
-      <input matInput formControlName="title" name="title" placeholder="Desktop HP G2">
-    </mat-form-field>
+        <div class="form-group text-center" >
+            <button type="submit" class="btn btn-dark">Add Product</button>
+        </div>
+       
   
-    <div *ngIf="title?.touched && title?.invalid" class="alert alert-warning">{{ title?.errors|json}}</div>
-  
-  
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Product Price</mat-label>
-      <input matInput formControlName="price" name="price" type="number" placeholder="1000$">
-    </mat-form-field>
-  
-    <div *ngIf="price?.touched && price?.invalid " class="alert alert-warning">{{ price?.errors|json}}</div>
-  
-  
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Product Brand</mat-label>
-      <input matInput formControlName="brand" name="brand" placeholder="HP">
-    </mat-form-field>
-  
-    <div *ngIf="brand?.touched && brand?.invalid" class="alert alert-warning">{{ brand?.errors|json}}</div>
-  
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Product Quantity</mat-label>
-      <input matInput formControlName="quantity" type="number" name="quantity" placeholder="Desktop HP G2">
-    </mat-form-field>
-  
-    <div *ngIf="quantity?.touched && quantity?.invalid"   class="alert alert-warning">{{ quantity?.errors|json}}</div>
-  
-  
-    <mat-form-field class="example-full-width" appearance="fill">
-      <mat-label>Product Details</mat-label>
-      <textarea matInput formControlName="details" name="details" placeholder="Ex. It makes me feel..."></textarea>
-    </mat-form-field>
-  
-    <div *ngIf="details?.touched && details?.invalid" class="alert alert-warning">{{ details?.errors|json}}</div>
-  
-    <input  formControlName="image" name="image" type="file" class="file-upload" onchange="console.log(event.target.files)"> 
-    
-    <div *ngIf="image?.touched && image?.invalid" class="alert alert-warning">{{ image?.errors|json}}</div>
-   -->
-   
-  <!-- <div style="margin-left:10%;">{{add_product_from.valid}}</div>
-  <button type="submit" mat-fab class="btn98" [disabled]="add_product_from.invalid">Add</button>
--->
-  
-  
-  <!-- get msg sucess or not  -->
-  </form>
+    </form>
+  </div>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
@@ -18,6 +19,9 @@ export class SingleComponent implements OnInit {
 checkOtpValueFlag = false;
   CheckOtp=new FormGroup({
     otp: new FormControl('',[Validators.required]),
+  })
+  AddComment = new FormGroup({
+    comment: new FormControl('',[Validators.required]),
   })
 //this.CheckOtp.value.otp 
   CheckValidationOTP(){
@@ -55,10 +59,12 @@ this.userdata.AddToMyCart(this.id).subscribe(
 
     addcomment(id:any)
     {
-      this.data.add_comment(this.id).subscribe(
-        res=> {   alert(res.message); },
+      this.data.add_comment(id ,this.AddComment.value).subscribe(
+        res=> {   alert("Your Comment Added successfully"); },
           err=>console.log(err),
-          ()=>{ this.router.navigate(['/']);}
+          ()=>{ 
+            
+          }
       )
     }
 

@@ -25,11 +25,18 @@ password:new FormControl('', Validators.required) ,
         console.log(res.data.token)
         localStorage.setItem('UserToken', `${res.data.token}`)
         // alert("sucessfully logged in")
-    
+    if(res.data.UserData.type == 'user'){
+      this.data.AdminOrNot = false;
+    }
+    else if(res.data.UserData.type == 'admin'){
+      this.data.AdminOrNot = true;
+    }
     },
       err=>console.log(err),
       ()=>{
        this.data.isLogin = true;
+     console.log(this.data.AdminOrNot )
+     //  this.data.AdminOrNot = true;
        // window.location.reload();
         this.router.navigate(['/']);
         

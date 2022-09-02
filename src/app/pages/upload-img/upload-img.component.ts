@@ -12,7 +12,7 @@ export class UploadImgComponent implements OnInit {
 ImdData= new FormGroup({
 img:new FormControl('' , Validators.required) 
 
-})
+}) 
   constructor(private user:UserapiService , private router:Router) { }
 NewImage:any
   ngOnInit(): void {

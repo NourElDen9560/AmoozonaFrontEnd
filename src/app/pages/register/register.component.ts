@@ -10,7 +10,7 @@ import { UserapiService } from 'src/app/services/userapi.service';
 })
 export class RegisterComponent implements OnInit {
 Register= new FormGroup({
-  name:new FormControl('', Validators.required) ,
+  name:new FormControl('',[ Validators.required , Validators.minLength(10)]) ,
   age:new FormControl('', Validators.required) ,
   email:new FormControl('', Validators.required) ,
   password:new FormControl('', Validators.required) ,
@@ -25,6 +25,7 @@ RegisterAction(){
   this.userdata.RegisterApi(this.Register.value).subscribe(
     (res)=>alert("successfully registered"),
     (err)=>console.log(err),
+    // Like Finally In JS 
     ()=>{
 this._router.navigate(['/'])
     }

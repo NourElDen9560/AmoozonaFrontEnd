@@ -1,70 +1,86 @@
 
 
-<div class="card text-center" >
-    <div class="card-body">
-      
-<form  [formGroup]="Register" (submit)="RegisterAction()">
 
-    <div class="form-group">
-        <label for="Name">Name</label>
-        <input type="text" class="form-control" formControlName="name"  id="Name" placeholder="Name" name="name" required >
-        <div class="alert alert-danger" *ngIf="this.Register.controls['name'].invalid">
-         <span >
-  Invalid Paassword
-         </span> 
-        </div>
-        
-      </div>
-
-
-    <div  class="form-group"  >
-      <label for="Email">Email address</label>      
-      <input type="email" class="form-control" formControlName="email" id="Email" placeholder="Enter email" name="Email" required  >
-      <div class="alert alert-danger" *ngIf="this.Register.controls['email'].invalid" >
-        <!-- {{this.login.controls['email'].invalid}} -->
-      <span >
-        Invalid Email
-               </span> 
-      </div>
-    </div>
-
-
-
-    <div class="form-group">
-      <label for="passwordEmail">Password</label>
-      <input type="password" class="form-control" formControlName="password"  id="passwordEmail" placeholder="Password" name="Password" required >
-      <div class="alert alert-danger" *ngIf="this.Register.controls['password'].invalid">
-       <span >
-Invalid Paassword
-       </span> 
-      </div>
-      
-    </div>
+    <section class="vh-100" style="background-color: #9A616D;">
+      <div class="container py-5 h-100">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col col-xl-10">
+            <div class="card" style="border-radius: 1rem;">
+              <div class="row g-0">
+                <div class="col-md-6 col-lg-5 d-none d-md-block">
+                  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/img1.webp"
+                    alt="login form" class="img-fluid" style="border-radius: 1rem 0 0 1rem;" />
+                </div>
+                <div class="col-md-6 col-lg-7 d-flex align-items-center">
+                  <div class="card-body p-4 p-lg-5 text-black">
     
+                    <form [formGroup]="Register" (submit)="RegisterAction()">
 
-    <div class="form-group">
-        <label for="Age">Age</label>
-        <input type="number" class="form-control" formControlName="age"  id="Age" placeholder="Age" name="age" required >
-        <div class="alert alert-danger" *ngIf="this.Register.controls['age'].invalid">
-         <span >
-  Invalid Paassword
-         </span> 
-        </div>
-        
-      </div>
-
-      <div class="form-group">
-        <input type="file" class="form-control" formControlName="image"  >
-      </div>
-
-
+                      <div class="form-outline mb-4">
+                        <input type="text"  formControlName="name"  id="Name" placeholder="Name" name="name" required  class="form-control form-control-lg" />
+                        
+                      </div>
+                
+                      <div class="form-outline mb-4">
+                        <input type="email"  class="form-control form-control-lg" formControlName="email" id="Email" placeholder="Enter email" name="Email" required />
+                        
+                      </div>
+                
+                      <div class="form-outline mb-4">
+                        <input type="password"  formControlName="password"  id="passwordEmail" placeholder="Password" name="Password" required class="form-control form-control-lg" />
+                        
+                      </div>
+                
+                      <div class="form-outline mb-4">
+                        <input type="number"  class="form-control form-control-lg" formControlName="Age"  id="Age" placeholder="Age" name="age" required />
+                        
+                      </div>
+                
+                      <div class="form-check d-flex justify-content-center mb-5">
+                        <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3cg" />
+                        <label class="form-check-label" for="form2Example3g">
+                          I agree all statements in <a href="#!" class="text-body"><u>Terms of service</u></a>
+                        </label>
+                      </div>
+                
+                      <div class="d-flex justify-content-center">
+                        <button type="submit"
+                          class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                      </div>
+                
+                      <p class="text-center text-muted mt-5 mb-0">Have already an account? <a routerLink="/login" style="cursor: pointer;"
+                          class="fw-bold text-body"><u>Login here</u></a></p>
+                
+                    </form>
+                
+               
     
-      <div class="form-group submit">
-        <button type="submit" class="btn btn-primary" [disabled]="this.Register.invalid"  >Submit</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
 
+<!-- 
+  <section class="vh-100 bg-image"
+  style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/new-templates/search-box/img4.webp');">
+  <div class="mask d-flex align-items-center h-100 gradient-custom-3">
+    <div class="container h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
 
-   
-  </form>
+         
+
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+</section> -->

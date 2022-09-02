@@ -33,6 +33,10 @@ Filtration(){
   else 
   this.ArrOfData = this.products
 }
+createRange(){
+  // return new Array(number);
+  return this.ArrOfData.slice(0 , 8);
+}
 
   ngOnInit(): void { this.listall()  }
 

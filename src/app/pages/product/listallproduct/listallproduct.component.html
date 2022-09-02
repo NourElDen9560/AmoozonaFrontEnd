@@ -2,9 +2,9 @@
 
  <!-- <h2>Helloooo To Our Products</h2> -->
  <section class="intro">
-    <div class="container intro_main">
+    <div class="container-fluid intro_main">
         <div class="some_words text-center">
-            <h2 style="color: rgb(192 201 253);" > Welcome To Our <span> Store </span> </h2>
+            <h2 style="color: rgb(192 201 253);" > Welcome To  <span> Store </span> </h2>
             <span class="spIntro">
                 Another free template by
                 <a style="color: rgb(0, 13, 90)">AmaaZoonA</a> Far far away,
@@ -17,40 +17,132 @@
     </div> <!-- end container -->
 </section>
 <hr>
-<h2 class="text-center">Welcome To Out Products</h2>
-<div class=" text-center" style="margin-bottom: 20px;">
-    
-    <input  style="background-color: white; color: black; cursor:auto" class="btn btn-primary rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon"[(ngModel)]="filterproduct" type="text" placeholder="Enter your product name" (change)="Filtration()" />
-    <button type="button" class="btn btn-outline-danger">search</button>
+<h2 class="text-center">Our Categories</h2>
 
-</div>
 <!-- <input  [(ngModel)]="filterproduct" type="text" placeholder="Enter your product name" (change)="Filtration()"> -->
-<section class="container" style="margin-bottom: 50px;">
-<div class="alert alert-danger text-center" *ngIf="ArrOfData.length==0">
-No Products With This Name
-</div>
-<div class="row row-cols-1 row-cols-md-4 g-4">
-    <div class="col" *ngFor="let p of ArrOfData" class="product_container" routerLink="/single/{{p._id}}">
-      
 
-        <div class="card" style="width: 18rem;padding: 10px;">
-            <img src="assets/product_img/p1.jpg" class="card-img-top" alt="...">
-            <div class="card-body text-center" style="color: blueviolet;padding: 20px;">
-                <h2 class="card-title"><span style="color: red;">Title</span>: {{p.title}}</h2>
-                <h4><span style="color: red;">Brand</span>:{{p.Brand}}</h4>
-                <p class="card-text"><span style="color: red;">Cost</span>:{{p.price}}</p>
-                <p class="card-text" style="color: teal;"><span style="color: red;">Details</span>: {{p.details}}</p>
-                
-                
-              
+
+<div class="category">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="category-item ch-400">
+                    <img src="../../../../assets/Slider/category-1.jpg" />
+                    <a class="category-name" href="">
+                        <p>Some text goes here that describes the image</p>
+                    </a>
+                </div>
             </div>
-          </div>
-
-
-       
-       
+            <div class="col-md-3">
+                <div class="category-item ch-250">
+                    <img src="../../../../assets/Slider/category-4.jpg" />
+                    <a class="category-name" href="">
+                        <p>Some text goes here that describes the image</p>
+                    </a>
+                </div>
+                <div class="category-item ch-150">
+                    <img src="../../../../assets/Slider/category-5.jpg" />
+                    <a class="category-name" href="">
+                        <p>Some text goes here that describes the image</p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="category-item ch-150">
+                    <img src="../../../../assets/Slider/category-6.jpg" />
+                    <a class="category-name" href="">
+                        <p>Some text goes here that describes the image</p>
+                    </a>
+                </div>
+                <div class="category-item ch-250">
+                    <img src="../../../../assets/Slider/category-7.jpg" />
+                    <a class="category-name" href="">
+                        <p>Some text goes here that describes the image</p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="category-item ch-400">
+                    <img src="../../../../assets/Slider/category-8.jpg" />
+                    <a class="category-name" href="">
+                        <p>Some text goes here that describes the image</p>
+                    </a>
+                </div>
+            </div>
+        </div>
     </div>
-  
-  </div>
+</div>
+
+
+
+  <!-- Featured Product Start -->
+  <div class="featured-product product">
+    <div class="container-fluid">
+        <div class="section-header text-center shadow-lg p-3 mb-5 bg-body rounded">
+            <h1>Featured Product</h1>
+        </div>
+        <div class=" text-center" style="margin-bottom: 20px;">
+    
+            <input  style="background-color: white; color: black; cursor:auto ; margin-right: 2px;" class="btn btn-outline-danger rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon"[(ngModel)]="filterproduct" type="text" placeholder="Enter your product name" (change)="Filtration()" />
+            <button type="button" class="btn btn-outline-danger">search</button>
+        
+        </div>
+        <div class="alert alert-danger text-center" *ngIf="ArrOfData.length==0">
+            No Products With This Name
+            </div>
+        <div class="row align-items-center product-slider product-slider-4">
+            <div class="col-lg-3" style="margin-bottom: 10px;" *ngFor="let p of createRange()" routerLink="/single/{{p._id}}" >
+                <div class="product-item">
+                    <div class="product-title">
+                        <a href="#">{{p.title}}</a>
+                        <div class="ratting">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                    </div>
+                    <div class="product-image">
+                        <a href="product-detail.html">
+                            <img src={{p.img}} alt="Product Image">
+                        </a>
+                        <div class="product-action">
+                            <a href="#"><i class="fa fa-cart-plus"></i></a>
+                            <a href="#"><i class="fa fa-heart"></i></a>
+                            <a href="#"><i class="fa fa-search"></i></a>
+                        </div>
+                    </div>
+                    <div class="product-price">
+                        <h3><span>$</span>99</h3>
+                        <a class="btn" routerLink="/single/{{p._id}}"><i class="fa fa-shopping-cart"></i>Buy Now</a>
+                    </div>
+                </div>
+            </div>
+            
+     
+        </div>
+<div class="text-center" style="margin-top: 20px;">
+    <button  routerLink="/listall" type="button" class="btn btn-outline-danger">Show All</button>
+
+</div>
+
+    </div>
+</div>
+
+<!-- Featured Product End -->   
+
+<div class="brand">
+    <div class="container-fluid">
+        <div class="brand-slider text-center">
+           
+            <div class="brand-item"><img src="../../../../assets/Slider/brand-2.png" alt=""></div>
+            <div class="brand-item"><img src="../../../../assets/Slider/brand-3.png" alt=""></div>
+            <div class="brand-item"><img src="../../../../assets/Slider/brand-4.png" alt=""></div>
+            <div class="brand-item"><img src="../../../../assets/Slider/brand-5.png" alt=""></div>
+            <div class="brand-item"><img src="../../../../assets/Slider/brand-6.png" alt=""></div>
+        </div>
+    </div>
+</div>
+
  
-</section>

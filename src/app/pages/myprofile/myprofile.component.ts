@@ -17,6 +17,7 @@ UserData:User ={
   password:"",
  
 }
+
 ArrOfCart:any[]=[]
   constructor(private user:UserapiService  , private _activated:ActivatedRoute ,private router:Router) { 
   }

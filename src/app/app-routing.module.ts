@@ -23,7 +23,8 @@ const routes: Routes = [
 {path:'myaccount',component:MyprofileComponent}, 
 {path:'edit_product/:id', component:EditproductComponent} ,
 {path:'changepassword', component:ChangepasswordComponent},
-{path:'uploadimg',component:UploadImgComponent}
+{path:'uploadimg',component:UploadImgComponent},
+{path:'listall' , component:ListallComponent}
 ];
 
 @NgModule({
