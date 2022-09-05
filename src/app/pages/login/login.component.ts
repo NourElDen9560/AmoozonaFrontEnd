@@ -24,6 +24,7 @@ password:new FormControl('', Validators.required) ,
       res=>{
         console.log(res.data.token)
         localStorage.setItem('UserToken', `${res.data.token}`)
+        localStorage.setItem('photo' ,res.data.UserData.image )
         // alert("sucessfully logged in")
     if(res.data.UserData.type == 'user'){
       this.data.AdminOrNot = false;
@@ -31,6 +32,7 @@ password:new FormControl('', Validators.required) ,
     else if(res.data.UserData.type == 'admin'){
       this.data.AdminOrNot = true;
     }
+  
     },
       err=>console.log(err),
       ()=>{

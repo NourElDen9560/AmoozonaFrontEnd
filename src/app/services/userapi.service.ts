@@ -9,6 +9,7 @@ export class UserapiService {
   api = `http://localhost:3000/api/user/`
   public isLogin = false
   public AdminOrNot = false;
+  public photo = "" ;
   constructor(private http: HttpClient) { }
   
   RegisterApi(Data:any):Observable<any>{

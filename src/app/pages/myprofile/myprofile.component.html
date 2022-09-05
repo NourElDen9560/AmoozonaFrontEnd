@@ -1,4 +1,4 @@
-<h2 class="text-center">Welcome to your Account </h2>
+
 
 <div class="alert alert-danger text-center" *ngIf="!UserData.name">
 Please Login You are Un Auth
@@ -15,7 +15,12 @@ Please Login You are Un Auth
               <li class="breadcrumb-item"><a href="#">Home</a></li>
               <li class="breadcrumb-item"><a href="#">User</a></li>
               <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+             
+            
             </ol>
+            <ul class="nav justify-content-end">
+              <a class="nav-link" routerLink="/logout" routerLinkActive="active" [routerLinkActiveOptions]="{exact:true}"  ><button class="btn btn-info" (click)="LogOutHandler()" > LogOut</button></a>
+            </ul>
           </nav>
         </div>
       </div>
@@ -46,17 +51,17 @@ Please Login You are Un Auth
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="coupon">
-                                            <input type="text" placeholder="Coupon Code">
-                                            <button>Apply Code</button>
+                                            <input type="text" placeholder="Coupon Code" [(ngModel)]="coupon" >
+                                            <button (click)="ApplyCopon()">Apply Code</button>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="cart-summary">
                                             <div class="cart-content">
                                                 <h1>Cart Summary</h1>
-                                                <p>Sub Total<span>$99</span></p>
+                                                <p>Sub Total<span>${{Checkoutcost}}</span></p>
                                                 <p>Shipping Cost<span>$1</span></p>
-                                                <h2>Grand Total<span>$100</span></h2>
+                                                <h2>Grand Total<span>${{Checkoutcost+1}}</span></h2>
                                             </div>
                                             <div class="cart-btn">
                                                 <button>Update Cart</button>

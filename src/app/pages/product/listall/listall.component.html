@@ -91,7 +91,7 @@
                         </div>
                     <div class="row align-items-center product-slider product-slider-4">
                         <div class="col-lg-3" style="margin-bottom: 10px;" *ngFor="let p of ArrOfData " >
-                            <div class="product-item">
+                            <div class="product-item" routerLink="/single/{{p._id}}">
                                 <div class="product-title">
                                     <a href="#">{{p.title}}</a>
                                     <div class="ratting">
@@ -104,7 +104,7 @@
                                 </div>
                                 <div class="product-image">
                                     <a href="product-detail.html">
-                                        <img src={{p.img}} alt="Product Image">
+                                        <img src='http://localhost:3000/{{p.img}}' alt="Product Image">
                                     </a>
                                     <div class="product-action">
                                         <a href="#"><i class="fa fa-cart-plus"></i></a>

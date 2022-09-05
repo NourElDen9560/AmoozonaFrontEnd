@@ -33,7 +33,8 @@ if(res.data.otp == this.CheckOtp.value.otp ){
   console.log(typeof this.id)
 this.userdata.AddToMyCart(this.id).subscribe(
   res=>{
-    this.router.navigate(['/myaccount'])  
+    alert("Product Addedto your cart")
+   document.getElementById("closemodal")?.click();
   }
   )
   

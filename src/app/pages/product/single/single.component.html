@@ -112,8 +112,8 @@
               <hr class="my-0" />
               <div class="card-body pb-0">
                 <div class="d-flex justify-content-between">
-                  <p><a href="#!" class="text-dark">$3,999</a></p>
-                  <p class="text-dark">#### 8787</p>
+                  <p><a href="#!" class="text-dark">${{obj.price}}</a></p>
+                  <p class="text-dark">code : ## 8787</p>
                 </div>
                 <p class="small text-muted">VISA Platinum</p>
                 <p class="small text-muted">Avaliable In Stock: <span style="color: green;">{{obj.quantity}}</span></p>
@@ -137,13 +137,13 @@
                         <div class="modal-body">
                             <form [formGroup]="CheckOtp" (submit)="CheckValidationOTP()">
                                 <input type="string" class="form-control" formControlName="otp" required placeholder="Enter Otp that Send on Your Mail">
-                                         <button class="btn btn-primary text-center" style="margin: 10px;" [disabled]="CheckOtp.invalid">Submit</button>
+                                         <button class="btn btn-primary text-center" type="submit" style="margin: 10px;" [disabled]="CheckOtp.invalid">Submit</button>
                                 
                                          </form>
                                         
                         </div>
                         <div class="modal-footer">
-                          <button type="button" class="btn btn-secondary" >Close</button>
+                          <button type="button" data-bs-dismiss="modal" class="btn btn-secondary" id="closemodal" >Close</button>
                          
                         </div>
                       </div>

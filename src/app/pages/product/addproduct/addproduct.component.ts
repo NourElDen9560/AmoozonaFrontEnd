@@ -42,8 +42,17 @@ export class AddproductComponent implements OnInit {
  
   const Form = new FormData();
     Form.append("img" , this.NewImage , this.NewImage.name);
+    
+    Form.append("title" ,this.add_product_from.value.title || "Title" );
+    Form.append("details" ,this.add_product_from.value.details || "details"  );
+    Form.append("price" ,this.add_product_from.value.price || "price");
+    Form.append("quantity" ,this.add_product_from.value.quantity || "quantity");
+    Form.append("Brand" ,this.add_product_from.value.Brand || "Brand");
+    
+    
+    
  console.log(Form)
-   this.data.add_prodcut(this.add_product_from.value).subscribe(
+   this.data.add_prodcut(Form).subscribe(
      res=>alert("Product Added sucessfully"),
      err=>console.log(err),
      ()=>{this.router.navigate(['/']);}

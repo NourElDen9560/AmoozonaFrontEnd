@@ -17,9 +17,10 @@ UserData:User ={
   password:"",
  
 }
-
+Checkoutcost:number =98;
+coupon:any
 ArrOfCart:any[]=[]
-  constructor(private user:UserapiService  , private _activated:ActivatedRoute ,private router:Router) { 
+  constructor(public user:UserapiService  , private _activated:ActivatedRoute ,private router:Router) { 
   }
 
   ngOnInit(): void {
@@ -28,15 +29,40 @@ ArrOfCart:any[]=[]
         //console.log( 'MyprofileComponent');
 console.log(res);
 this.ArrOfCart = res.data.MyCart
-console.log(this.ArrOfCart);
 
+console.log(this.ArrOfCart);
+console.log(this.user.photo);
 this.UserData = res.data;
       },
-      (err)=>{console.log(err) }
+      (err)=>{console.log(err)
+      
+      }
     ) 
   }
   id:any= this._activated.snapshot.paramMap.get('id'); //get id parameter
-  
+  LogOutHandler(){
+    this.user.LogOutApi().subscribe(
+      (res)=>{
+        console.log("LogOut Successfully");
+        this.user.isLogin=false
+      }
+      , 
+      (err)=>{console.log(err) }
+      ,
+      ()=>{
+        this.user.AdminOrNot = false;
+        localStorage.removeItem('UserToken')
+        this.user.photo="";
+ this.router.navigate(['/login']);
+// window.location.reload();       
+      }
+    )
+  }
+  ApplyCopon(){
+if(this.coupon == "nour10"){
+  this.Checkoutcost/=2;
+}
+  }
   RemoveProduct(id:string){
 this.user.RemoveFromcART(id).subscribe(
   (res)=>{
@@ -47,6 +73,12 @@ this.user.RemoveFromcART(id).subscribe(
     this.ngOnInit() 
   }
 )
+  }
+
+  scroll(el: HTMLElement) {
+
+    el.scrollIntoView({ behavior: 'smooth' });
+  
   }
 
 }

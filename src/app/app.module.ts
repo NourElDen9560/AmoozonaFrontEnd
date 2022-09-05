@@ -18,6 +18,8 @@ import { EditproductComponent } from './pages/product/edit/editproduct.component
 import { ChangepasswordComponent } from './pages/changepassword/changepassword.component';
 import { UploadImgComponent } from './pages/upload-img/upload-img.component';
 import { ListallComponent } from './pages/product/listall/listall.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,10 @@ import { ListallComponent } from './pages/product/listall/listall.component';
     AppRoutingModule , 
     FormsModule , 
     ReactiveFormsModule ,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatSelectModule ,
+    
   ],
   providers: [
     {

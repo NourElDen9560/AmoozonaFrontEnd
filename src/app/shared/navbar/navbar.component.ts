@@ -13,24 +13,32 @@ import { UserapiService } from 'src/app/services/userapi.service';
 export class NavbarComponent implements OnInit {
 //, public myprofilecomponent:MyprofileComponent
   constructor(public user:UserapiService   , private router:Router) { }
-
+  countriesList: any[] = ['Germany', 'Switzerland', 'UAE', 'Pakistan', 'Brazil', 'England'];
   LogInOrNot = false;
   MyData:User={
 name:'', password:'', email:'',age:0
   }
+  photo:any;
   ngOnInit(): void {
     const token = localStorage.getItem('UserToken');
     if(token)
     this.user.isLogin = true;
    // this.LogInOrNot = true;
-    
+  this.photo=localStorage.getItem('photo');
+   //this.MyAccount()
   }
+  
     
+  onChange(event: any){
+    console.log(event.value);
+  }
+
   MyAccount(){
     this.user.MyProfile().subscribe(
       (res)=>{
-console.log(res);
+console.log(res.data);
 this.MyData = res.data;
+console.log(this.MyData);
       },
       (err)=>{console.log(err) }
     )
@@ -47,7 +55,9 @@ this.MyData = res.data;
       ()=>{
         this.user.AdminOrNot = false;
         localStorage.removeItem('UserToken')
+        localStorage.removeItem('photo')
         this.LogInOrNot=false;
+
  this.router.navigate(['/login']);
 // window.location.reload();       
       }
